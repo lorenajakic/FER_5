@@ -1,0 +1,12 @@
+<div class="flex gap-2 mb-6 overflow-x-auto">
+  <% [
+    { tab: :places,    path: trip_places_path(trip),        ctrl: "places" },
+    { tab: :itinerary, path: trip_itinerary_path(trip),     ctrl: "itineraries" },
+    { tab: :chat,      path: trip_chat_messages_path(trip), ctrl: "chat_messages" },
+    { tab: :tickets,   path: trip_tickets_path(trip),       ctrl: "tickets" },
+  ].each do |item| %>
+    <% active = controller_name == item[:ctrl] %>
+    <%= link_to t("trips.tabs.#{item[:tab]}"), item[:path],
+        class: "inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition whitespace-nowrap #{active ? 'bg-indigo-50 text-indigo-700 border-indigo-200' : 'text-gray-600 hover:bg-gray-50 border-transparent'}" %>
+  <% end %>
+</div>

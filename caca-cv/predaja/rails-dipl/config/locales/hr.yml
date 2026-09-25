@@ -1,0 +1,449 @@
+hr:
+  helpers:
+    submit:
+      create: "Stvori %{model}"
+      update: "Spremi promjene"
+      submit: "Spremi %{model}"
+  activerecord:
+    models:
+      user: "korisnik"
+      trip: "putovanje"
+    attributes:
+      trip:
+        start_date: "Datum početka"
+        end_date: "Datum završetka"
+      user:
+        name: "Ime"
+        email: "E-pošta"
+        password: "Lozinka"
+        current_password: "Trenutna lozinka"
+        password_confirmation: "Potvrda lozinke"
+        remember_me: "Zapamti me"
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              invalid: "nije ispravna"
+              blank: "ne smije biti prazna"
+            password_confirmation:
+              confirmation: "ne odgovara lozinci"
+        trip:
+          attributes:
+            end_date:
+              after_start_date: "mora biti nakon datuma početka"
+        ticket:
+          attributes:
+            file:
+              blank: "Priložite PDF ili sliku."
+              invalid_type: "mora biti PDF ili slika (JPEG, PNG, WebP)."
+              too_large: "ne smije biti veći od 20 MB."
+
+  date:
+    formats:
+      short: "%-d. %b"
+      long: "%-d. %b %Y."
+      day_header: "%A, %-d. %B"
+    abbr_month_names:
+      - ~
+      - "sij"
+      - "velj"
+      - "ožu"
+      - "tra"
+      - "svi"
+      - "lip"
+      - "srp"
+      - "kol"
+      - "ruj"
+      - "lis"
+      - "stu"
+      - "pro"
+    month_names:
+      - ~
+      - "siječanj"
+      - "veljača"
+      - "ožujak"
+      - "travanj"
+      - "svibanj"
+      - "lipanj"
+      - "srpanj"
+      - "kolovoz"
+      - "rujan"
+      - "listopad"
+      - "studeni"
+      - "prosinac"
+
+  datetime:
+    distance_in_words:
+      less_than_x_seconds:
+        one: "manje od sekunde"
+        other: "manje od %{count} sekundi"
+      x_seconds:
+        one: "1 sekundu"
+        other: "%{count} sekundi"
+      less_than_x_minutes:
+        one: "manje od minute"
+        other: "manje od %{count} minuta"
+      x_minutes:
+        one: "1 minutu"
+        other: "%{count} minuta"
+      about_x_hours:
+        one: "oko 1 sat"
+        other: "oko %{count} sati"
+      x_days:
+        one: "1 dan"
+        other: "%{count} dana"
+      about_x_months:
+        one: "oko 1 mjesec"
+        other: "oko %{count} mjeseci"
+      x_months:
+        one: "1 mjesec"
+        other: "%{count} mjeseci"
+      about_x_years:
+        one: "oko 1 godinu"
+        other: "oko %{count} godina"
+      over_x_years:
+        one: "više od 1 godine"
+        other: "više od %{count} godina"
+      almost_x_years:
+        one: "gotovo 1 godinu"
+        other: "gotovo %{count} godina"
+
+  app_name: "GoTogether"
+
+  devise:
+    confirmations:
+      new:
+        title: "Pošalji upute za potvrdu"
+        subtitle: "Unesite svoju e-poštu i poslat ćemo vam novi link za potvrdu."
+        resend_instructions: "Pošalji upute za potvrdu"
+        back_to_sign_in: "Natrag na prijavu"
+      mailer:
+        greeting: "Dobrodošli, %{email}!"
+        instructions: "Možete potvrditi svoj račun klikom na link ispod:"
+        confirm_link: "Potvrdi moj račun"
+    passwords:
+      new:
+        title: "Zaboravili ste lozinku?"
+        subtitle: "Unesite svoju e-poštu i poslat ćemo vam upute za resetiranje."
+        send_instructions: "Pošalji upute za resetiranje"
+        back_to_sign_in: "Natrag na prijavu"
+      edit:
+        title: "Postavi novu lozinku"
+        new_password: "Nova lozinka"
+        characters_minimum: "%{count} znakova minimalno"
+        confirm_new_password: "Potvrdi novu lozinku"
+        change_password: "Promijeni lozinku"
+        back_to_sign_in: "Natrag na prijavu"
+      reset_email:
+        greeting: "Pozdrav %{email}!"
+        requested: "Netko je zatražio link za promjenu vaše lozinke. To možete učiniti putem linka ispod."
+        change_password: "Promijeni lozinku"
+        ignore: "Ako niste zatražili ovo, zanemarite ovaj email."
+        no_change: "Vaša lozinka se neće promijeniti dok ne pristupite linku iznad i ne kreirate novu."
+    registrations:
+      new:
+        title: "Kreirajte račun"
+        characters_minimum: "%{count} znakova minimalno"
+        sign_up: "Registriraj se"
+        already_have_account: "Već imate račun?"
+        sign_in: "Prijavite se"
+    sessions:
+      new:
+        sign_in_to: "Prijavi se"
+        sign_in: "Prijavi se"
+        forgot_password: "Zaboravili ste lozinku?"
+        resend_confirmation: "Niste primili upute za potvrdu?"
+        no_account: "Nemate račun?"
+        sign_up: "Registrirajte se"
+
+  nav:
+    profile: "Profil"
+    sign_out: "Odjava"
+    invitations: "Pozivnice na putovanja"
+
+  dashboard:
+    title: "Moja putovanja"
+    new_trip: "Novo putovanje"
+    no_trips: "Nema putovanja"
+    no_trips_hint: "Kreirajte svoje prvo putovanje!"
+    create_first_trip: "Kreiraj prvo putovanje"
+    days_count:
+      one: "%{count} dan"
+      few: "%{count} dana"
+      other: "%{count} dana"
+
+  trips:
+    new_title: "Novo putovanje"
+    edit_title: "Uredi putovanje"
+    back_to_trips: "Moja putovanja"
+    back_to_trip: "Natrag na %{title}"
+    status_updated: "Status putovanja promijenjen u: %{status}."
+    status_actions:
+      planning: "Počni planiranje"
+      finalized: "Završi planiranje"
+      completed: "Označi kao završeno"
+    created: "Putovanje uspješno kreirano."
+    updated: "Putovanje uspješno ažurirano."
+    deleted: "Putovanje uspješno obrisano."
+    not_participant: "Niste sudionik ovog putovanja."
+    only_creator: "Samo kreator putovanja može izvršiti ovu radnju."
+    not_editable: "Ovo putovanje se više ne može uređivati."
+    confirm_delete: "Jeste li sigurni da želite obrisati ovo putovanje?"
+    errors:
+      overlapping: "Datumi se preklapaju s putovanjem \"%{trip_title}\". Putovanja mogu dijeliti granični dan, ali se ne smiju preklapati."
+    statuses:
+      draft: "Skica"
+      planning: "Planiranje"
+      finalized: "Dovršeno planiranje"
+      completed: "Završeno"
+    form:
+      subtitle: "Počni planirati sljedeću avanturu! Unesi osnove sada, a ostalo popuni kasnije."
+      title: "Naziv"
+      title_placeholder: "npr. Avantura u Parizu"
+      destination: "Odredište"
+      destination_placeholder: "npr. Pariz, Francuska"
+      start_date: "Datum početka"
+      end_date: "Datum završetka"
+      accommodation_section_title: "Smještaj (neobavezno)"
+      accommodation_section_hint: "Možete ostaviti prazno i unijeti kasnije."
+      accommodation_address: "Adresa smještaja"
+      accommodation_address_placeholder: "npr. 10 Rue de Rivoli, Pariz"
+      accommodation_details: "Detalji smještaja"
+      accommodation_details_placeholder: "npr. Prijava 15:00, odjava 11:00, broj rezervacije: ABC123"
+      transport_section_title: "Dolazak i odlazak (neobavezno)"
+      transport_section_hint: "Dodajte podatke o letu/autobusu/vlaku ako ih imate. Možete ispuniti i kasnije."
+      arrival_card_title: "Dolazak"
+      departure_card_title: "Odlazak"
+      transport_mode_label: "Prijevoz"
+      time_label: "Vrijeme"
+      details_label: "Detalji"
+      arrival_transport_mode: "Prijevoz dolaska"
+      arrival_at: "Vrijeme dolaska"
+      arrival_details: "Detalji dolaska"
+      arrival_details_placeholder: "npr. FR 876, CDG Terminal 2B"
+      departure_transport_mode: "Prijevoz odlaska"
+      departure_at: "Vrijeme odlaska"
+      departure_details: "Detalji odlaska"
+      departure_details_placeholder: "npr. Flixbus 102, Paris Bercy"
+      not_set: "Nije postavljeno"
+      cover_image: "Naslovna slika"
+      cover_image_hint: "JPG, PNG ili WebP"
+      errors_title: "Ispravite sljedeće greške:"
+    show:
+      participants: "Sudionici"
+      creator: "kreator"
+      edit: "Uredi"
+      delete: "Obriši"
+      accommodation_label: "Smještaj"
+      accommodation_not_set: "Još nije postavljeno"
+      arrival_label: "Dolazak"
+      departure_label: "Odlazak"
+      not_set: "Nije postavljeno"
+    transport_modes:
+      plane: "Avion"
+      bus: "Autobus"
+      train: "Vlak"
+      car: "Auto"
+      ferry: "Trajekt"
+      other: "Ostalo"
+    tabs:
+      places: "Mjesta"
+      itinerary: "Raspored"
+      chat: "Agent"
+      tickets: "Dokumenti"
+    placeholders:
+      places: "Pretražite i dodajte mjesta u putovanje. Uskoro dostupno."
+      itinerary: "Vaš dnevni plan putovanja će se pojaviti ovdje. Uskoro dostupno."
+      chat: "Chat za putovanje bit će ovdje. Uskoro dostupno."
+      tickets: "Učitajte i upravljajte putnim dokumentima. Uskoro dostupno."
+
+  invitations:
+    page_title: "Pozivnice"
+    invite_title: "Pozovi ljude"
+    email_placeholder: "Email adresa"
+    invite_button: "Pozovi"
+    pending_badge: "Na čekanju"
+    sent: "Pozivnica uspješno poslana."
+    accepted: "Pridružili ste se putovanju!"
+    declined: "Pozivnica odbijena."
+    not_found: "Pozivnica nije pronađena."
+    invited_by: "Pozvao/la %{name}"
+    time_ago: "prije %{time}"
+    accept_button: "Prihvati"
+    decline_button: "Odbij"
+    no_invitations: "Nema pozivnica na čekanju"
+    no_invitations_hint: "Kada vas netko pozove na putovanje, pozivnica će se pojaviti ovdje."
+    errors:
+      user_not_found: "Korisnik s ovom email adresom ne postoji."
+      already_participant: "Ovaj korisnik je već sudionik."
+      already_invited: "Pozivnica je već poslana na ovaj email."
+
+  profiles:
+    title: "Profil"
+    edit_title: "Uredi profil"
+    change_password: "Promijeni lozinku"
+    edit_profile: "Uredi profil"
+    name: "Ime"
+    avatar: "Avatar"
+    avatar_browse: "Odaberi datoteku"
+    avatar_pick_cta: "Još nema slike, odaberi sliku za učitavanje."
+    avatar_replace_cta: "Lijevo je trenutna slika, odaberi novu ako želiš zamijeniti."
+    avatar_invalid_type: "Odaberi sliku (npr. JPG, PNG, WebP)."
+    avatar_too_large: "Slika je prevelika (najviše 5 MB)."
+    save: "Spremi promjene"
+    updated: "Profil uspješno ažuriran."
+
+  errors:
+    messages:
+      blank: "ne smije biti prazno"
+      taken: "je već zauzeto"
+      too_short:
+        one: "je prekratka (minimalno %{count} znak)"
+        few: "je prekratka (minimalno %{count} znaka)"
+        other: "je prekratko (minimalno %{count} znakova)"
+      confirmation: "ne odgovara"
+    form:
+      not_saved: "Nije moguće spremiti, ispravite greške:"
+
+  pundit:
+    not_authorized: "Nemate ovlasti za ovu radnju."
+
+  tickets:
+    created: "Karta je spremljena."
+    updated: "Karta je ažurirana."
+    deleted: "Karta je uklonjena."
+    add_ticket: "Novo"
+    add_first: "Dodaj prvu kartu"
+    tab_heading: "Dokumenti i karte"
+    tab_subheading:
+      zero: "Nema dokumenata"
+      one: "%{count} dokument"
+      few: "%{count} dokumenta"
+      other: "%{count} dokumenata"
+    new_title: "Dodaj kartu"
+    edit_title: "Uredi kartu"
+    edit_subtitle: "Ažuriraj podatke za %{title}."
+    back_to_trip: "Natrag na putovanje"
+    back_to_tickets_tab: "Natrag na karte"
+    empty_title: "Još nema karata"
+    empty_hint: "Dodajte letove, hotele, ulaznice ili prijevoz."
+    uploaded_by: "Učitao/la"
+    open_pdf: "Otvori PDF"
+    open_image: "Prikaži sliku"
+    view_pdf: "Prikaži PDF"
+    view_image: "Prikaži sliku"
+    download_pdf: "Otvori / preuzmi PDF"
+    download_image: "Otvori / preuzmi sliku"
+    confirm_delete: "Ukloniti ovu kartu?"
+    file_invalid_type: "Odaberite PDF ili sliku (JPEG, PNG, WebP)."
+    file_too_large: "Datoteka ne smije biti veća od 20 MB."
+    file_required: "Priložite datoteku (PDF ili sliku)."
+    filters:
+      all: "Sve"
+    categories:
+      accommodation: "Smještaj"
+      activity: "Aktivnost"
+      transport: "Prijevoz"
+      other: "Ostalo"
+    form:
+      section_details: "Detalji"
+      title: "Naslov"
+      title_placeholder: "npr. Zagreb → Pariz, Hotel Le Marais…"
+      category: "Kategorija"
+      date: "Datum"
+      details: "Detalji / bilješke"
+      details_placeholder: "Broj rezervacije, potvrda, dodatne info…"
+      cost: "Cijena (neobavezno)"
+      cost_label: "Cijena (neobavezno)"
+      currency: "Valuta"
+      file: "Prilog"
+      file_cta: "Kliknite za odabir datoteke"
+      file_replace_cta: "Kliknite za zamjenu datoteke"
+      file_hint: "PDF ili slika, do 20 MB"
+      file_current: "Trenutna datoteka"
+      file_keep_hint: "Ostavite prazno ako želite zadržati postojeću datoteku."
+      submit: "Spremi kartu"
+      submit_update: "Spremi promjene"
+
+  places:
+    search_placeholder: "Pretraži mjesto..."
+    add_manually: "Dodaj mjesto ručno"
+    added_places:
+      zero: "Nema dodanih mjesta"
+      one: "%{count} mjesto dodano"
+      few: "%{count} mjesta dodana"
+      other: "%{count} mjesta dodano"
+    empty_title: "Još nema mjesta"
+    empty_hint: "Pretražite mjesto (prvo odaberite kategoriju) ili kliknite na kartu na znamenitost, pokušat ćemo učitati naziv."
+    pin_dropped: "Pin postavljen na kartu"
+    reverse_loading: "Provjera lokacije…"
+    reverse_not_found: "Nema naziva, upišite sami"
+    map_pick_title: "Mjesto na karti"
+    map_pick_subtitle: "Ispravite naziv po potrebi, odaberite kategoriju, zatim dodajte."
+    map_hint: "Kliknite na znamenitost ili zgradu na karti da se učita naziv, ili koristite pretragu iznad."
+    confirm_delete: "Ukloniti ovo mjesto?"
+    added_by: "Dodao/la"
+    comment_placeholder: "Dodaj komentar..."
+    add_comment: "Objavi"
+    categories:
+      restaurant: "Restoran"
+      museum: "Muzej"
+      park: "Park"
+      landmark: "Znamenitost"
+      shopping: "Kupovina"
+      entertainment: "Zabava"
+      other: "Ostalo"
+    form:
+      name: "Naziv"
+      name_placeholder: "npr. Eiffelov toranj"
+      latitude: "Geografska širina"
+      longitude: "Geografska dužina"
+      category: "Kategorija"
+      duration: "Trajanje (min)"
+      submit: "Dodaj mjesto"
+
+  confirm_dialog:
+    title: "Jeste li sigurni?"
+    cancel: "Odustani"
+    confirm: "Da, obriši"
+
+  account_settings:
+    title: "Postavke računa"
+    email: "E-pošta"
+    current_password: "Trenutna lozinka"
+    current_password_hint: "Potrebna nam je trenutna lozinka za potvrdu promjena"
+    new_password: "Nova lozinka"
+    password_confirmation: "Potvrda lozinke"
+    save_changes: "Spremi promjene"
+
+  itinerary:
+    saved: "Plan puta je spremljen!"
+    panel:
+      day: "Dan"
+      no_itinerary: "Još nema rasporeda"
+      no_itinerary_hint: "Planirajte putovanje u tabu Agent, zatim kliknite \"Spremi raspored\""
+      transport_to_next: "Prijevoz do sljedećeg"
+      travel_methods:
+        transit: "javni prijevoz"
+        walking: "pješice"
+        driving: "automobil"
+        cycling: "biciklom"
+        taxi: "taksi"
+
+  agent:
+    errors:
+      unreachable: "Nije moguće doseći agenta za planiranje. Pokušajte ponovno."
+      no_response: "Agent nije vratio odgovor."
+      generic: "Trenutno ne mogu generirati odgovor. Pokušajte ponovno za koji trenutak."
+    chat:
+      placeholder: "Zamolite asistenta da isplanira vaše putovanje."
+      empty_title: "Zamolite AI da isplanira vaše putovanje"
+      empty_hint: "Pokušajte: \"Isplaniraj putovanje\" · \"Predloži kafić blizu 2. dana\" · \"Premjesti muzej na 3. dan\""
+      save_to_itinerary: "Spremi raspored"
+
+  common:
+    cancel: "Odustani"
+    edit: "Uredi"
+    delete: "Obriši"
+    save: "Spremi"

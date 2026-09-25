@@ -1,0 +1,35 @@
+<mxfile host="app.diagrams.net" version="24.0.0">
+  <diagram name="Trivijalni pristup" id="trivijalni-pristup">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="input" value="Upit korisnika&#10;&#10;&quot;isplaniraj mi&#10;putovanje&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1;arcSize=25;shadow=1;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="200" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="model" value="Jezični model&#10;&#10;(prompt + model)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=17;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="150" width="200" height="170" as="geometry" />
+        </mxCell>
+
+        <mxCell id="output" value="Plan&#10;&#10;izlaz = konačan&#10;raspored" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1;arcSize=25;shadow=1;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="840" y="180" width="200" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=3;fontSize=13;" edge="1" parent="1" source="input" target="model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e2" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=3;fontSize=13;" edge="1" parent="1" source="model" target="output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note" value="Prvi odgovor modela = konačan plan.  Nema provjere." style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fontStyle=2;fontColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="220" y="370" width="660" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

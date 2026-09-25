@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  config_server:
+    image: mongo:4.4
+    command: mongod --configsvr --replSet rsconf
+    volumes:
+      - config_server_data:/data/db
+    networks:
+      - my-shardnet
+
+  router_server:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+    command: mongos --bind_ip 0.0.0.0 --configdb rsconf/config_server:27019
+    volumes:
+      - router_server_data:/data/db
+      - ./routerdata:/nmbpdata          
+    networks:
+      - my-shardnet
+
+volumes:
+  config_server_data:
+  router_server_data:
+
+networks:
+  my-shardnet:
+    external:
+      name: shardnet

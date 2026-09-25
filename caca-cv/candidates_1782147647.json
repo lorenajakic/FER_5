@@ -1,0 +1,698 @@
+.0.1:61990 - "POST /chat HTTP/1.1" 200 OK
+[trip_planner] route_intent     language → hr
+[trip_planner] route_intent → refine_itinerary
+[trip_planner] refine_node      → excluding places: ['Capitoline Museums']
+[trip_planner] refine_node      → routing to execute_plan_node
+[trip_planner] CONTEXT SIZE     15700 chars (limit 16000, ok)
+[trip_planner] execute_plan     → LLM (anthropic:claude-opus-4-8) × 1 candidate(s) (parallel) ...
+[trip_planner] execute_plan     c1 LLM returned in 34674ms
+[trip_planner] execute_plan     all LLM calls done in 34675ms wall-clock
+[trip_planner] execute_plan     c1 ok - 2 days, confidence 0.80
+[trip_planner] execute_plan     done (34680ms) - 1 candidate(s)
+[trip_planner] validate         c1  FAIL  MANDATORY_PLACE_MISSING
+[trip_planner] CONTEXT SIZE     15700 chars (limit 16000, ok)
+[trip_planner] repair [1/2]     → LLM repair × 1 candidate(s)
+[trip_planner] validate         c1  PASS  (0 warnings)
+[trip_planner] score            c1 selected  final=0.786  (travel 0.5233, pref 1.0, balance 1.0, schedule 0.55, fairness 0.9375, budget None)
+[trip_planner] compose          PASS - c1, 0 soft warnings
+[trip_planner] compose          DEBUG dump → debug_dumps/candidates_1782147647.json
+[trip_planner] --- timings ---
+[trip_planner]   route_intent                       1607 ms  
+[trip_planner]   plan_node                          1368 ms  
+[trip_planner]   execute_plan_node                 34681 ms  █████████
+[trip_planner]   validate_candidates                   0 ms  
+[trip_planner]   repair_failed_candidates          30294 ms  ████████
+[trip_planner]   score_candidates                      0 ms  
+[trip_planner]   compose_response                      2 ms  
+[trip_planner]   refine_node                        1739 ms  
+[trip_planner]   TOTAL                             69690 ms
+
+{
+  "timestamp": 1782147647,
+  "selected_candidate_id": "c1",
+  "candidates": [
+    {
+      "id": "c1",
+      "generation_rationale": "Uklonjen Capitoline Museums; Dan 1 produljen na okolnim stopovima da nema mrtvog vremena.",
+      "assumptions": [
+        "Ulaznice za Colosseum/Forum/Palatine i Vatikan rezervirane unaprijed",
+        "LLM repair round 1"
+      ],
+      "preliminary_confidence": 0.8,
+      "validation": {
+        "candidate_id": "c1",
+        "hard_pass": true,
+        "violations": [],
+        "warnings": []
+      },
+      "plan": {
+        "plan": {
+          "days": [
+            {
+              "day_number": 1,
+              "date": "2026-10-10",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Colosseum",
+                  "start_time": "11:00",
+                  "duration_minutes": 100,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 1800,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Rezervirati termin unaprijed.",
+                  "latitude": 41.8902,
+                  "longitude": 12.4922
+                },
+                {
+                  "position": 2,
+                  "place_name": "Terre e Domus",
+                  "start_time": "12:50",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Ručak; Alternatives: La Taverna dei Fori Imperiali, Ai Tre Scalini.",
+                  "latitude": 41.8954,
+                  "longitude": 12.4847
+                },
+                {
+                  "position": 3,
+                  "place_name": "Roman Forum",
+                  "start_time": "14:15",
+                  "duration_minutes": 80,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Ulaz zajednički s Palatinom.",
+                  "latitude": 41.8925,
+                  "longitude": 12.4853
+                },
+                {
+                  "position": 4,
+                  "place_name": "Palatine Hill",
+                  "start_time": "15:45",
+                  "duration_minutes": 75,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": {
+                    "line": "Bus 118",
+                    "boarding_station": "Circo Massimo",
+                    "exit_station": "Appia Antica/Domine Quo Vadis",
+                    "direction": "direction Appia Antica"
+                  },
+                  "notes": "Pogledi na Forum i Cirkus.",
+                  "latitude": 41.8894,
+                  "longitude": 12.4869
+                },
+                {
+                  "position": 5,
+                  "place_name": "Appian Way",
+                  "start_time": "17:20",
+                  "duration_minutes": 50,
+                  "time_block": "evening",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 25,
+                  "transit_details": {
+                    "line": "Bus 118",
+                    "boarding_station": "Appia Antica/Domine Quo Vadis",
+                    "exit_station": "Terme Caracalla/Antoniniana",
+                    "direction": "direction centro"
+                  },
+                  "notes": "Antička cesta, lagana šetnja.",
+                  "latitude": 41.854,
+                  "longitude": 12.516
+                },
+                {
+                  "position": 6,
+                  "place_name": "Baths of Caracalla",
+                  "start_time": "18:35",
+                  "duration_minutes": 45,
+                  "time_block": "evening",
+                  "cost_estimate_cents": 800,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 30,
+                  "transit_details": {
+                    "line": "Bus 628",
+                    "boarding_station": "Terme Caracalla/Antoniniana",
+                    "exit_station": "Trastevere",
+                    "direction": "direction Trastevere"
+                  },
+                  "notes": "Monumentalne antičke terme.",
+                  "latitude": 41.879,
+                  "longitude": 12.4924
+                },
+                {
+                  "position": 7,
+                  "place_name": "Trastevere",
+                  "start_time": "19:50",
+                  "duration_minutes": 90,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 3800,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": 0,
+                  "transit_details": null,
+                  "notes": "Večera; Alternatives: Da Enzo al 29, Tonnarello.",
+                  "latitude": 41.8896,
+                  "longitude": 12.4695
+                }
+              ]
+            },
+            {
+              "day_number": 2,
+              "date": "2026-10-11",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Vatican Museums",
+                  "start_time": "09:00",
+                  "duration_minutes": 120,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 2000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 12,
+                  "transit_details": null,
+                  "notes": "Rezervacija obavezna; uključuje Sikstinsku kapelu.",
+                  "latitude": 41.9065,
+                  "longitude": 12.4536
+                },
+                {
+                  "position": 2,
+                  "place_name": "St. Peter's Basilica",
+                  "start_time": "11:15",
+                  "duration_minutes": 60,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 12,
+                  "transit_details": null,
+                  "notes": "Provjeriti red i dress code.",
+                  "latitude": 41.9022,
+                  "longitude": 12.4539
+                },
+                {
+                  "position": 3,
+                  "place_name": "Castel Sant'Angelo",
+                  "start_time": "12:30",
+                  "duration_minutes": 50,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 1500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 15,
+                  "transit_details": null,
+                  "notes": "Pogled na grad s terase.",
+                  "latitude": 41.9031,
+                  "longitude": 12.4663
+                },
+                {
+                  "position": 4,
+                  "place_name": "L'Arcangelo",
+                  "start_time": "13:30",
+                  "duration_minutes": 45,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2200,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 15,
+                  "transit_details": null,
+                  "notes": "Ručak; Alternatives: Il Sorpasso, Da Sergio alle Grotte.",
+                  "latitude": null,
+                  "longitude": null
+                },
+                {
+                  "position": 5,
+                  "place_name": "Campo de' Fiori",
+                  "start_time": "14:30",
+                  "duration_minutes": 20,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 8,
+                  "transit_details": null,
+                  "notes": "Tržnica i živahan trg.",
+                  "latitude": 41.8956,
+                  "longitude": 12.4722
+                },
+                {
+                  "position": 6,
+                  "place_name": "Piazza Navona",
+                  "start_time": "14:58",
+                  "duration_minutes": 25,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 8,
+                  "transit_details": null,
+                  "notes": "Bernini fontane.",
+                  "latitude": 41.8992,
+                  "longitude": 12.4731
+                },
+                {
+                  "position": 7,
+                  "place_name": "Pantheon",
+                  "start_time": "15:31",
+                  "duration_minutes": 25,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 8,
+                  "transit_details": null,
+                  "notes": "Antička kupola.",
+                  "latitude": 41.8986,
+                  "longitude": 12.4769
+                },
+                {
+                  "position": 8,
+                  "place_name": "Trevi Fountain",
+                  "start_time": "16:04",
+                  "duration_minutes": 15,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 8,
+                  "transit_details": null,
+                  "notes": "Brzo usput, baciti novčić.",
+                  "latitude": 41.9009,
+                  "longitude": 12.4833
+                },
+                {
+                  "position": 9,
+                  "place_name": "Spanish Steps",
+                  "start_time": "16:27",
+                  "duration_minutes": 15,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 12,
+                  "transit_details": null,
+                  "notes": "Brzo usput.",
+                  "latitude": 41.9058,
+                  "longitude": 12.4823
+                },
+                {
+                  "position": 10,
+                  "place_name": "Villa Borghese",
+                  "start_time": "16:54",
+                  "duration_minutes": 6,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": 0,
+                  "transit_details": null,
+                  "notes": "Kratki predah u parku; odlazak na aerodrom do 17:00.",
+                  "latitude": 41.9141,
+                  "longitude": 12.4922
+                }
+              ]
+            }
+          ]
+        },
+        "accommodation_suggestions": [],
+        "transport_suggestions": [
+          {
+            "title": "Roma Pass 48h",
+            "details": "Uključuje javni prijevoz i ulaz u 2 atrakcije; korisno za gust raspored.",
+            "estimated_cost_cents": 3300
+          }
+        ]
+      }
+    }
+  ],
+  "score_report": {
+    "candidates": [
+      {
+        "candidate_id": "c1",
+        "travel_efficiency_score": 0.5233,
+        "preference_fit_score": 1.0,
+        "day_balance_score": 1.0,
+        "schedule_quality_score": 0.55,
+        "participant_fairness_score": 0.9375,
+        "budget_fit_score": null,
+        "final_score": 0.7856
+      }
+    ],
+    "selected_candidate_id": "c1",
+    "weights": {
+      "travel_efficiency": 0.2778,
+      "preference_fit": 0.2778,
+      "day_balance": 0.1667,
+      "schedule_quality": 0.1667,
+      "participant_fairness": 0.1111
+    }
+  },
+  "final_structured": {
+    "plan": {
+      "days": [
+        {
+          "day_number": 1,
+          "date": "2026-10-10",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Colosseum",
+              "start_time": "11:00",
+              "duration_minutes": 100,
+              "time_block": "morning",
+              "cost_estimate_cents": 1800,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Rezervirati termin unaprijed.",
+              "latitude": 41.8902,
+              "longitude": 12.4922
+            },
+            {
+              "position": 2,
+              "place_name": "Terre e Domus",
+              "start_time": "12:50",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Ručak; Alternatives: La Taverna dei Fori Imperiali, Ai Tre Scalini.",
+              "latitude": 41.8954,
+              "longitude": 12.4847
+            },
+            {
+              "position": 3,
+              "place_name": "Roman Forum",
+              "start_time": "14:15",
+              "duration_minutes": 80,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Ulaz zajednički s Palatinom.",
+              "latitude": 41.8925,
+              "longitude": 12.4853
+            },
+            {
+              "position": 4,
+              "place_name": "Palatine Hill",
+              "start_time": "15:45",
+              "duration_minutes": 75,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 20,
+              "transit_details": {
+                "line": "Bus 118",
+                "boarding_station": "Circo Massimo",
+                "exit_station": "Appia Antica/Domine Quo Vadis",
+                "direction": "direction Appia Antica"
+              },
+              "notes": "Pogledi na Forum i Cirkus.",
+              "latitude": 41.8894,
+              "longitude": 12.4869
+            },
+            {
+              "position": 5,
+              "place_name": "Appian Way",
+              "start_time": "17:20",
+              "duration_minutes": 50,
+              "time_block": "evening",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 25,
+              "transit_details": {
+                "line": "Bus 118",
+                "boarding_station": "Appia Antica/Domine Quo Vadis",
+                "exit_station": "Terme Caracalla/Antoniniana",
+                "direction": "direction centro"
+              },
+              "notes": "Antička cesta, lagana šetnja.",
+              "latitude": 41.854,
+              "longitude": 12.516
+            },
+            {
+              "position": 6,
+              "place_name": "Baths of Caracalla",
+              "start_time": "18:35",
+              "duration_minutes": 45,
+              "time_block": "evening",
+              "cost_estimate_cents": 800,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 30,
+              "transit_details": {
+                "line": "Bus 628",
+                "boarding_station": "Terme Caracalla/Antoniniana",
+                "exit_station": "Trastevere",
+                "direction": "direction Trastevere"
+              },
+              "notes": "Monumentalne antičke terme.",
+              "latitude": 41.879,
+              "longitude": 12.4924
+            },
+            {
+              "position": 7,
+              "place_name": "Trastevere",
+              "start_time": "19:50",
+              "duration_minutes": 90,
+              "time_block": "dinner",
+              "cost_estimate_cents": 3800,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": 0,
+              "transit_details": null,
+              "notes": "Večera; Alternatives: Da Enzo al 29, Tonnarello.",
+              "latitude": 41.8896,
+              "longitude": 12.4695
+            }
+          ]
+        },
+        {
+          "day_number": 2,
+          "date": "2026-10-11",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Vatican Museums",
+              "start_time": "09:00",
+              "duration_minutes": 120,
+              "time_block": "morning",
+              "cost_estimate_cents": 2000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 12,
+              "transit_details": null,
+              "notes": "Rezervacija obavezna; uključuje Sikstinsku kapelu.",
+              "latitude": 41.9065,
+              "longitude": 12.4536
+            },
+            {
+              "position": 2,
+              "place_name": "St. Peter's Basilica",
+              "start_time": "11:15",
+              "duration_minutes": 60,
+              "time_block": "morning",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 12,
+              "transit_details": null,
+              "notes": "Provjeriti red i dress code.",
+              "latitude": 41.9022,
+              "longitude": 12.4539
+            },
+            {
+              "position": 3,
+              "place_name": "Castel Sant'Angelo",
+              "start_time": "12:30",
+              "duration_minutes": 50,
+              "time_block": "lunch",
+              "cost_estimate_cents": 1500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 15,
+              "transit_details": null,
+              "notes": "Pogled na grad s terase.",
+              "latitude": 41.9031,
+              "longitude": 12.4663
+            },
+            {
+              "position": 4,
+              "place_name": "L'Arcangelo",
+              "start_time": "13:30",
+              "duration_minutes": 45,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2200,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 15,
+              "transit_details": null,
+              "notes": "Ručak; Alternatives: Il Sorpasso, Da Sergio alle Grotte.",
+              "latitude": null,
+              "longitude": null
+            },
+            {
+              "position": 5,
+              "place_name": "Campo de' Fiori",
+              "start_time": "14:30",
+              "duration_minutes": 20,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 8,
+              "transit_details": null,
+              "notes": "Tržnica i živahan trg.",
+              "latitude": 41.8956,
+              "longitude": 12.4722
+            },
+            {
+              "position": 6,
+              "place_name": "Piazza Navona",
+              "start_time": "14:58",
+              "duration_minutes": 25,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 8,
+              "transit_details": null,
+              "notes": "Bernini fontane.",
+              "latitude": 41.8992,
+              "longitude": 12.4731
+            },
+            {
+              "position": 7,
+              "place_name": "Pantheon",
+              "start_time": "15:31",
+              "duration_minutes": 25,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 8,
+              "transit_details": null,
+              "notes": "Antička kupola.",
+              "latitude": 41.8986,
+              "longitude": 12.4769
+            },
+            {
+              "position": 8,
+              "place_name": "Trevi Fountain",
+              "start_time": "16:04",
+              "duration_minutes": 15,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 8,
+              "transit_details": null,
+              "notes": "Brzo usput, baciti novčić.",
+              "latitude": 41.9009,
+              "longitude": 12.4833
+            },
+            {
+              "position": 9,
+              "place_name": "Spanish Steps",
+              "start_time": "16:27",
+              "duration_minutes": 15,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 12,
+              "transit_details": null,
+              "notes": "Brzo usput.",
+              "latitude": 41.9058,
+              "longitude": 12.4823
+            },
+            {
+              "position": 10,
+              "place_name": "Villa Borghese",
+              "start_time": "16:54",
+              "duration_minutes": 6,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": 0,
+              "transit_details": null,
+              "notes": "Kratki predah u parku; odlazak na aerodrom do 17:00.",
+              "latitude": 41.9141,
+              "longitude": 12.4922
+            }
+          ]
+        }
+      ]
+    },
+    "accommodation_suggestions": [],
+    "transport_suggestions": [
+      {
+        "title": "Roma Pass 48h",
+        "details": "Uključuje javni prijevoz i ulaz u 2 atrakcije; korisno za gust raspored.",
+        "estimated_cost_cents": 3300
+      }
+    ],
+    "constraint_report": {
+      "hard_pass": true,
+      "selected_candidate_id": "c1",
+      "violations": [],
+      "warnings": []
+    },
+    "score_report": {
+      "candidates": [
+        {
+          "candidate_id": "c1",
+          "travel_efficiency_score": 0.5233,
+          "preference_fit_score": 1.0,
+          "day_balance_score": 1.0,
+          "schedule_quality_score": 0.55,
+          "participant_fairness_score": 0.9375,
+          "budget_fit_score": null,
+          "final_score": 0.7856
+        }
+      ],
+      "selected_candidate_id": "c1",
+      "weights": {
+        "travel_efficiency": 0.2778,
+        "preference_fit": 0.2778,
+        "day_balance": 0.1667,
+        "schedule_quality": 0.1667,
+        "participant_fairness": 0.1111
+      }
+    },
+    "message": "Uklonjen Capitoline Museums; Dan 1 produljen na okolnim stopovima da nema mrtvog vremena. Evo vašeg plana po danima:\n\n**Vaša baza:** Via Cavour, Roma, Italy - svaki puni dan počinje i završava ovdje.\n\n**Dan 1 – subota, 10. listopada**\nColosseum · Terre e Domus · Roman Forum · Palatine Hill · Appian Way (+2 više)\n\n**Dan 2 – nedjelja, 11. listopada**\nVatican Museums · St. Peter's Basilica · Castel Sant'Angelo · L'Arcangelo · Campo de' Fiori (+5 više)\n\n---\n**Kretanje:**\n- **Roma Pass 48h** - Uključuje javni prijevoz i ulaz u 2 atrakcije; korisno za gust raspored.\n",
+    "accommodation_location": {
+      "address": "Via Cavour, Roma, Italy",
+      "latitude": 41.893033,
+      "longitude": 12.490817
+    }
+  }
+}

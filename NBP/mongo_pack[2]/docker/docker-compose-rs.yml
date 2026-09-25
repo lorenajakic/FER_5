@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  rs0:
+    image: mongo:4.4
+    ports:
+      - "27018:27017"
+    command: mongod --replSet rsnmbp
+    volumes:
+      - rs0_data:/data/db
+      - ./nmbprsdata0:/nmbpdata
+
+  rs1:
+    image: mongo:4.4
+    ports:
+      - "27019:27017"
+    command: mongod --replSet rsnmbp
+    volumes:
+      - rs1_data:/data/db
+      - ./nmbprsdata1:/nmbpdata
+
+  rs2:
+    image: mongo:4.4
+    ports:
+      - "27020:27017"
+    command: mongod --replSet rsnmbp
+    volumes:
+      - rs2_data:/data/db
+      - ./nmbprsdata2:/nmbpdata
+
+volumes:
+  rs0_data:
+  rs1_data:
+  rs2_data:

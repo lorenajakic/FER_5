@@ -1,0 +1,1208 @@
+{
+  "timestamp": 1782143620,
+  "selected_candidate_id": null,
+  "candidates": [
+    {
+      "id": "c1",
+      "generation_rationale": "Six days split into Valletta sightseeing, south Malta coast, a full Gozo island day with all four Gozo must-visits, Comino+Popeye, and a leisurely Mdina final morning before the late-night flight.",
+      "assumptions": [
+        "Gozo ferry: Malta-Gozo ferry from Ċirkewwa, ~25 min crossing, runs frequently; bus X1/222 from St Julians to Ċirkewwa ~75 min.",
+        "Comino ferry: seasonal service from Ċirkewwa to Blue Lagoon ~20 min; operates in October.",
+        "Popeye Village open in October, book tickets online.",
+        "Oct 25 is Sunday - Marsaxlokk Sunday market is ideal.",
+        "Blue Grotto boat tours run from Wied iż-Żurrieq, mornings best when sea is calm.",
+        "Il-Kċina Għawdxija is near Marsalforn bay, good for swimming in late afternoon.",
+        "Mdina on departure day works as morning visit before packing for late-night flight.",
+        "All bus lines referenced are Malta Public Transport routes.",
+        "LLM repair round 1",
+        "LLM repair round 2"
+      ],
+      "preliminary_confidence": 0.82,
+      "validation": {
+        "candidate_id": "c1",
+        "hard_pass": false,
+        "violations": [
+          {
+            "code": "MANDATORY_PLACE_MISSING",
+            "severity": "hard",
+            "message": "Mandatory place 'citadella visitor‘s centre' never scheduled."
+          }
+        ],
+        "warnings": []
+      },
+      "plan": {
+        "plan": {
+          "days": [
+            {
+              "day_number": 1,
+              "date": "2026-10-23",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Spinola Bay",
+                  "start_time": "18:30",
+                  "duration_minutes": 60,
+                  "time_block": "evening",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 5,
+                  "transit_details": null,
+                  "notes": "Easy evening stroll right next to the accommodation to settle in.",
+                  "latitude": 35.9215,
+                  "longitude": 14.49
+                },
+                {
+                  "position": 2,
+                  "place_name": "Zest Restaurant",
+                  "start_time": "19:35",
+                  "duration_minutes": 75,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 3500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": 0,
+                  "transit_details": null,
+                  "notes": "Dinner right on Spinola Bay. Alternatives: Gululu, Raffael Restaurant.",
+                  "latitude": 35.9214,
+                  "longitude": 14.4902
+                }
+              ]
+            },
+            {
+              "day_number": 2,
+              "date": "2026-10-24",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "St. John's Co-Cathedral",
+                  "start_time": "09:30",
+                  "duration_minutes": 90,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 1500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 8,
+                  "transit_details": null,
+                  "notes": "Book tickets online to skip queues; closed Sunday mornings.",
+                  "latitude": 35.8978,
+                  "longitude": 14.5125
+                },
+                {
+                  "position": 2,
+                  "place_name": "Grandmaster's Palace",
+                  "start_time": "11:08",
+                  "duration_minutes": 75,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 1200,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 7,
+                  "transit_details": null,
+                  "notes": "Armory hall is the highlight; state rooms may be closed during parliamentary sessions.",
+                  "latitude": 35.8989,
+                  "longitude": 14.514
+                },
+                {
+                  "position": 3,
+                  "place_name": "Nenu the Artisan Baker",
+                  "start_time": "12:30",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Maltese ftira and traditional dishes. Alternatives: Rubino, Legligin.",
+                  "latitude": 35.8985,
+                  "longitude": 14.5115
+                },
+                {
+                  "position": 4,
+                  "place_name": "Fort St. Elmo",
+                  "start_time": "13:55",
+                  "duration_minutes": 90,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 1000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": null,
+                  "notes": "War Museum is inside; allow full 90 min for both fort and museum.",
+                  "latitude": 35.9019,
+                  "longitude": 14.5186
+                },
+                {
+                  "position": 5,
+                  "place_name": "Upper Barrakka Gardens",
+                  "start_time": "16:05",
+                  "duration_minutes": 50,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 5,
+                  "transit_details": null,
+                  "notes": "Saluting Battery cannon fire at 16:00 daily - time your visit to catch it.",
+                  "latitude": 35.8945,
+                  "longitude": 14.5108
+                },
+                {
+                  "position": 6,
+                  "place_name": "Caffe Cordina",
+                  "start_time": "18:00",
+                  "duration_minutes": 75,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 3200,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": 0,
+                  "transit_details": null,
+                  "notes": "Historic café-restaurant in Republic Street, Valletta. Alternatives: Palazzo Preca, Ambrosia.",
+                  "latitude": 35.8992,
+                  "longitude": 14.5133
+                }
+              ]
+            },
+            {
+              "day_number": 3,
+              "date": "2026-10-25",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Marsaxlokk",
+                  "start_time": "09:00",
+                  "duration_minutes": 120,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 30,
+                  "transit_details": {
+                    "line": "Bus 85",
+                    "boarding_station": "Marsaxlokk",
+                    "exit_station": "Birzebbuga / Wied iz-Zurrieq junction",
+                    "direction": "direction Valletta via Birzebbuga"
+                  },
+                  "notes": "Sunday market is on today - best day to visit; buy fresh fish and lace souvenirs.",
+                  "latitude": 35.8419,
+                  "longitude": 14.543
+                },
+                {
+                  "position": 2,
+                  "place_name": "Blue Grotto",
+                  "start_time": "11:30",
+                  "duration_minutes": 75,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 800,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 5,
+                  "transit_details": null,
+                  "notes": "Boat tours depart from Wied iż-Żurrieq steps; sea conditions permitting.",
+                  "latitude": 35.8206,
+                  "longitude": 14.4561
+                },
+                {
+                  "position": 3,
+                  "place_name": "Carmen's Bar & Restaurant",
+                  "start_time": "12:50",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 15,
+                  "transit_details": null,
+                  "notes": "Overlooks Wied iż-Żurrieq cove. Alternatives: Blue Grotto Restaurant, Hot Rock Restaurant.",
+                  "latitude": 35.8222,
+                  "longitude": 14.4548
+                },
+                {
+                  "position": 4,
+                  "place_name": "Ħaġar Qim",
+                  "start_time": "14:20",
+                  "duration_minutes": 90,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 1000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 55,
+                  "transit_details": {
+                    "line": "Bus 201",
+                    "boarding_station": "Ħaġar Qim stop",
+                    "exit_station": "St Julian's (Spinola Bay)",
+                    "direction": "direction Valletta / St Julian's"
+                  },
+                  "notes": "Visitor centre with audiovisual show included in ticket; book online for discount.",
+                  "latitude": 35.8276,
+                  "longitude": 14.4421
+                },
+                {
+                  "position": 5,
+                  "place_name": "Gululu",
+                  "start_time": "18:00",
+                  "duration_minutes": 75,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 3500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": 0,
+                  "transit_details": null,
+                  "notes": "Maltese and Mediterranean menu at Spinola Bay. Alternatives: Zest, Raffael Restaurant.",
+                  "latitude": 35.9216,
+                  "longitude": 14.4902
+                }
+              ]
+            },
+            {
+              "day_number": 4,
+              "date": "2026-10-26",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Gozo Ferry boarding (Ċirkewwa)",
+                  "start_time": "07:45",
+                  "duration_minutes": 25,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 30,
+                  "transit_details": {
+                    "line": "Gozo Channel Ferry",
+                    "boarding_station": "Ċirkewwa Ferry Terminal",
+                    "exit_station": "Mġarr Ferry Terminal, Gozo",
+                    "direction": "direction Gozo"
+                  },
+                  "notes": "Bus X1 from St Julian's to Ċirkewwa departs ~06:30; ferry runs every 45 min.",
+                  "latitude": 35.9858,
+                  "longitude": 14.3356
+                },
+                {
+                  "position": 2,
+                  "place_name": "Citadella Visitor's Centre",
+                  "start_time": "09:30",
+                  "duration_minutes": 60,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 5,
+                  "transit_details": null,
+                  "notes": "Free entry; excellent panoramic views of Gozo from the bastions.",
+                  "latitude": 36.045648,
+                  "longitude": 14.238971
+                },
+                {
+                  "position": 3,
+                  "place_name": "Citadella muzej",
+                  "start_time": "10:35",
+                  "duration_minutes": 75,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 600,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Natural History Museum and Cathedral Museum are within the Citadel walls.",
+                  "latitude": 36.0458065,
+                  "longitude": 14.2394856
+                },
+                {
+                  "position": 4,
+                  "place_name": "Ta' Rikardu",
+                  "start_time": "12:00",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 25,
+                  "transit_details": {
+                    "line": "Gozo Bus 311",
+                    "boarding_station": "Victoria Bus Terminal",
+                    "exit_station": "Dwejra / San Lawrenz",
+                    "direction": "direction Dwejra"
+                  },
+                  "notes": "Inside the Citadel walls, serves local Gozitan cheese and wine. Alternatives: Café Jubilee, Kcina tal-Barrakka.",
+                  "latitude": 36.0457,
+                  "longitude": 14.2389
+                },
+                {
+                  "position": 5,
+                  "place_name": "Il-Qala tad-Dwejra",
+                  "start_time": "13:30",
+                  "duration_minutes": 120,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 30,
+                  "transit_details": {
+                    "line": "Gozo Bus 311",
+                    "boarding_station": "Dwejra / San Lawrenz",
+                    "exit_station": "Marsalforn",
+                    "direction": "direction Victoria then Bus 310 to Marsalforn"
+                  },
+                  "notes": "Scenic coastal hike around Dwejra Bay and Inland Sea; wear sturdy shoes.",
+                  "latitude": 36.0467778,
+                  "longitude": 14.1912207
+                },
+                {
+                  "position": 6,
+                  "place_name": "Il-Kċina Għawdxija",
+                  "start_time": "16:00",
+                  "duration_minutes": 90,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 35,
+                  "transit_details": {
+                    "line": "Gozo Bus 322 / taxi",
+                    "boarding_station": "Marsalforn",
+                    "exit_station": "Mġarr Ferry Terminal",
+                    "direction": "direction Mġarr via Victoria"
+                  },
+                  "notes": "Bay near Marsalforn good for a late swim; restaurant on site for snacks.",
+                  "latitude": 36.0304875,
+                  "longitude": 14.2172205
+                },
+                {
+                  "position": 7,
+                  "place_name": "Il-Kartell Restaurant",
+                  "start_time": "19:30",
+                  "duration_minutes": 75,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 3500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": 0,
+                  "transit_details": null,
+                  "notes": "Back in St Julian's area after ferry; Maltese seafood. Alternatives: Paranga, Zest.",
+                  "latitude": 35.922,
+                  "longitude": 14.489
+                }
+              ]
+            },
+            {
+              "day_number": 5,
+              "date": "2026-10-27",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Popeye Village",
+                  "start_time": "09:30",
+                  "duration_minutes": 90,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 1900,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": {
+                    "line": "Bus 101",
+                    "boarding_station": "Mellieħa Bus Stop",
+                    "exit_station": "Ċirkewwa / Anchor Bay",
+                    "direction": "direction Ċirkewwa"
+                  },
+                  "notes": "Book tickets in advance online; includes entry to film sets and small beach.",
+                  "latitude": 35.956,
+                  "longitude": 14.342
+                },
+                {
+                  "position": 2,
+                  "place_name": "Blue Lagoon (Comino)",
+                  "start_time": "11:30",
+                  "duration_minutes": 210,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 2500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 40,
+                  "transit_details": {
+                    "line": "Comino Ferry",
+                    "boarding_station": "Ċirkewwa Ferry Terminal",
+                    "exit_station": "Blue Lagoon, Comino",
+                    "direction": "direction Comino"
+                  },
+                  "notes": "Ferry from Ċirkewwa ~20 min; return last ferry around 17:00 in October.",
+                  "latitude": 36.0144,
+                  "longitude": 14.3287
+                },
+                {
+                  "position": 3,
+                  "place_name": "Munchies Mellieha",
+                  "start_time": "15:30",
+                  "duration_minutes": 60,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 45,
+                  "transit_details": {
+                    "line": "Bus 221",
+                    "boarding_station": "Mellieħa",
+                    "exit_station": "St Julian's / Spinola Bay",
+                    "direction": "direction St Julian's"
+                  },
+                  "notes": "Late lunch after Blue Lagoon return. Alternatives: Arriva Café Mellieħa, Bouquet Garni.",
+                  "latitude": 35.9572,
+                  "longitude": 14.362
+                },
+                {
+                  "position": 4,
+                  "place_name": "Spinola Bay",
+                  "start_time": "17:30",
+                  "duration_minutes": 45,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 5,
+                  "transit_details": null,
+                  "notes": "Evening wind-down stroll along the bay before dinner.",
+                  "latitude": 35.9215,
+                  "longitude": 14.49
+                },
+                {
+                  "position": 5,
+                  "place_name": "Paranga Restaurant",
+                  "start_time": "19:00",
+                  "duration_minutes": 75,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 4000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": 0,
+                  "transit_details": null,
+                  "notes": "Upscale seafood on the waterfront, St George's Bay. Alternatives: Noni, Rosselli.",
+                  "latitude": 35.921,
+                  "longitude": 14.4895
+                }
+              ]
+            },
+            {
+              "day_number": 6,
+              "date": "2026-10-28",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Mdina",
+                  "start_time": "09:00",
+                  "duration_minutes": 150,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 5,
+                  "transit_details": null,
+                  "notes": "Bus 51/52 from Valletta or direct from St Julian's; best explored on foot inside the walls.",
+                  "latitude": 35.8859,
+                  "longitude": 14.4035
+                },
+                {
+                  "position": 2,
+                  "place_name": "Fontanella Tea Garden",
+                  "start_time": "11:55",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 1800,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 45,
+                  "transit_details": {
+                    "line": "Bus 52",
+                    "boarding_station": "Mdina Gate",
+                    "exit_station": "St Julian's / Paceville",
+                    "direction": "direction Valletta then change for St Julian's"
+                  },
+                  "notes": "Famous for cake and views over the island from Mdina's bastions. Alternatives: De Mondion, Bacchus.",
+                  "latitude": 35.8862,
+                  "longitude": 14.4038
+                },
+                {
+                  "position": 3,
+                  "place_name": "Luggage storage / hotel pack & checkout",
+                  "start_time": "14:00",
+                  "duration_minutes": 60,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 5,
+                  "transit_details": null,
+                  "notes": "Checkout was at 10:00 so arrange late checkout or store luggage at hotel reception.",
+                  "latitude": 35.8999,
+                  "longitude": 14.5154
+                },
+                {
+                  "position": 4,
+                  "place_name": "Spinola Bay",
+                  "start_time": "15:05",
+                  "duration_minutes": 60,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 5,
+                  "transit_details": null,
+                  "notes": "Final farewell stroll along the bay before heading to airport.",
+                  "latitude": 35.9215,
+                  "longitude": 14.49
+                },
+                {
+                  "position": 5,
+                  "place_name": "Bowls & Brunch St Julian's",
+                  "start_time": "18:30",
+                  "duration_minutes": 75,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 3000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": 0,
+                  "transit_details": null,
+                  "notes": "Early farewell dinner near hotel before airport transfer. Alternatives: Barracuda, Hugo's Lounge.",
+                  "latitude": 35.9205,
+                  "longitude": 14.49
+                }
+              ]
+            }
+          ]
+        },
+        "accommodation_suggestions": [
+          {
+            "title": "St Julian's accommodation confirmed",
+            "details": "9-11 Triq San Anglu, St Julian's. Check-in after 16:00, checkout at 10:00.",
+            "estimated_cost_cents": null
+          }
+        ],
+        "transport_suggestions": [
+          {
+            "title": "Malta Public Transport App",
+            "details": "Download the Tallinja app for real-time bus schedules; single ride ~€1.50, day pass ~€3.",
+            "estimated_cost_cents": 300
+          },
+          {
+            "title": "Gozo day: Bus X1 to Ċirkewwa",
+            "details": "Depart St Julian's ~06:30 on Bus X1 to reach Ċirkewwa ferry in time for 07:30 sailing.",
+            "estimated_cost_cents": 150
+          },
+          {
+            "title": "Gozo Channel Ferry",
+            "details": "Return ticket ~€5/person; runs every 45 min. Pay on board or book Gozo Channel app.",
+            "estimated_cost_cents": 500
+          },
+          {
+            "title": "Comino Ferry",
+            "details": "Captain Morgan or independent operators from Ċirkewwa; ~€12-15 return per person.",
+            "estimated_cost_cents": 1300
+          },
+          {
+            "title": "Airport transfer on Oct 28",
+            "details": "Bus X4 or Express from St Julian's to MIA ~45 min; taxi ~€20-25. Allow 2h before 23:30 flight.",
+            "estimated_cost_cents": 150
+          }
+        ]
+      }
+    }
+  ],
+  "score_report": {},
+  "final_structured": {
+    "plan": {
+      "days": [
+        {
+          "day_number": 1,
+          "date": "2026-10-23",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Spinola Bay",
+              "start_time": "18:30",
+              "duration_minutes": 60,
+              "time_block": "evening",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 5,
+              "transit_details": null,
+              "notes": "Easy evening stroll right next to the accommodation to settle in.",
+              "latitude": 35.9215,
+              "longitude": 14.49
+            },
+            {
+              "position": 2,
+              "place_name": "Zest Restaurant",
+              "start_time": "19:35",
+              "duration_minutes": 75,
+              "time_block": "dinner",
+              "cost_estimate_cents": 3500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": 0,
+              "transit_details": null,
+              "notes": "Dinner right on Spinola Bay. Alternatives: Gululu, Raffael Restaurant.",
+              "latitude": 35.9214,
+              "longitude": 14.4902
+            }
+          ]
+        },
+        {
+          "day_number": 2,
+          "date": "2026-10-24",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "St. John's Co-Cathedral",
+              "start_time": "09:30",
+              "duration_minutes": 90,
+              "time_block": "morning",
+              "cost_estimate_cents": 1500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 8,
+              "transit_details": null,
+              "notes": "Book tickets online to skip queues; closed Sunday mornings.",
+              "latitude": 35.8978,
+              "longitude": 14.5125
+            },
+            {
+              "position": 2,
+              "place_name": "Grandmaster's Palace",
+              "start_time": "11:08",
+              "duration_minutes": 75,
+              "time_block": "morning",
+              "cost_estimate_cents": 1200,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 7,
+              "transit_details": null,
+              "notes": "Armory hall is the highlight; state rooms may be closed during parliamentary sessions.",
+              "latitude": 35.8989,
+              "longitude": 14.514
+            },
+            {
+              "position": 3,
+              "place_name": "Nenu the Artisan Baker",
+              "start_time": "12:30",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Maltese ftira and traditional dishes. Alternatives: Rubino, Legligin.",
+              "latitude": 35.8985,
+              "longitude": 14.5115
+            },
+            {
+              "position": 4,
+              "place_name": "Fort St. Elmo",
+              "start_time": "13:55",
+              "duration_minutes": 90,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 1000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 20,
+              "transit_details": null,
+              "notes": "War Museum is inside; allow full 90 min for both fort and museum.",
+              "latitude": 35.9019,
+              "longitude": 14.5186
+            },
+            {
+              "position": 5,
+              "place_name": "Upper Barrakka Gardens",
+              "start_time": "16:05",
+              "duration_minutes": 50,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 5,
+              "transit_details": null,
+              "notes": "Saluting Battery cannon fire at 16:00 daily - time your visit to catch it.",
+              "latitude": 35.8945,
+              "longitude": 14.5108
+            },
+            {
+              "position": 6,
+              "place_name": "Caffe Cordina",
+              "start_time": "18:00",
+              "duration_minutes": 75,
+              "time_block": "dinner",
+              "cost_estimate_cents": 3200,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": 0,
+              "transit_details": null,
+              "notes": "Historic café-restaurant in Republic Street, Valletta. Alternatives: Palazzo Preca, Ambrosia.",
+              "latitude": 35.8992,
+              "longitude": 14.5133
+            }
+          ]
+        },
+        {
+          "day_number": 3,
+          "date": "2026-10-25",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Marsaxlokk",
+              "start_time": "09:00",
+              "duration_minutes": 120,
+              "time_block": "morning",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 30,
+              "transit_details": {
+                "line": "Bus 85",
+                "boarding_station": "Marsaxlokk",
+                "exit_station": "Birzebbuga / Wied iz-Zurrieq junction",
+                "direction": "direction Valletta via Birzebbuga"
+              },
+              "notes": "Sunday market is on today - best day to visit; buy fresh fish and lace souvenirs.",
+              "latitude": 35.8419,
+              "longitude": 14.543
+            },
+            {
+              "position": 2,
+              "place_name": "Blue Grotto",
+              "start_time": "11:30",
+              "duration_minutes": 75,
+              "time_block": "morning",
+              "cost_estimate_cents": 800,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 5,
+              "transit_details": null,
+              "notes": "Boat tours depart from Wied iż-Żurrieq steps; sea conditions permitting.",
+              "latitude": 35.8206,
+              "longitude": 14.4561
+            },
+            {
+              "position": 3,
+              "place_name": "Carmen's Bar & Restaurant",
+              "start_time": "12:50",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 15,
+              "transit_details": null,
+              "notes": "Overlooks Wied iż-Żurrieq cove. Alternatives: Blue Grotto Restaurant, Hot Rock Restaurant.",
+              "latitude": 35.8222,
+              "longitude": 14.4548
+            },
+            {
+              "position": 4,
+              "place_name": "Ħaġar Qim",
+              "start_time": "14:20",
+              "duration_minutes": 90,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 1000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 55,
+              "transit_details": {
+                "line": "Bus 201",
+                "boarding_station": "Ħaġar Qim stop",
+                "exit_station": "St Julian's (Spinola Bay)",
+                "direction": "direction Valletta / St Julian's"
+              },
+              "notes": "Visitor centre with audiovisual show included in ticket; book online for discount.",
+              "latitude": 35.8276,
+              "longitude": 14.4421
+            },
+            {
+              "position": 5,
+              "place_name": "Gululu",
+              "start_time": "18:00",
+              "duration_minutes": 75,
+              "time_block": "dinner",
+              "cost_estimate_cents": 3500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": 0,
+              "transit_details": null,
+              "notes": "Maltese and Mediterranean menu at Spinola Bay. Alternatives: Zest, Raffael Restaurant.",
+              "latitude": 35.9216,
+              "longitude": 14.4902
+            }
+          ]
+        },
+        {
+          "day_number": 4,
+          "date": "2026-10-26",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Gozo Ferry boarding (Ċirkewwa)",
+              "start_time": "07:45",
+              "duration_minutes": 25,
+              "time_block": "morning",
+              "cost_estimate_cents": 500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 30,
+              "transit_details": {
+                "line": "Gozo Channel Ferry",
+                "boarding_station": "Ċirkewwa Ferry Terminal",
+                "exit_station": "Mġarr Ferry Terminal, Gozo",
+                "direction": "direction Gozo"
+              },
+              "notes": "Bus X1 from St Julian's to Ċirkewwa departs ~06:30; ferry runs every 45 min.",
+              "latitude": 35.9858,
+              "longitude": 14.3356
+            },
+            {
+              "position": 2,
+              "place_name": "Citadella Visitor's Centre",
+              "start_time": "09:30",
+              "duration_minutes": 60,
+              "time_block": "morning",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 5,
+              "transit_details": null,
+              "notes": "Free entry; excellent panoramic views of Gozo from the bastions.",
+              "latitude": 36.045648,
+              "longitude": 14.238971
+            },
+            {
+              "position": 3,
+              "place_name": "Citadella muzej",
+              "start_time": "10:35",
+              "duration_minutes": 75,
+              "time_block": "morning",
+              "cost_estimate_cents": 600,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Natural History Museum and Cathedral Museum are within the Citadel walls.",
+              "latitude": 36.0458065,
+              "longitude": 14.2394856
+            },
+            {
+              "position": 4,
+              "place_name": "Ta' Rikardu",
+              "start_time": "12:00",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 25,
+              "transit_details": {
+                "line": "Gozo Bus 311",
+                "boarding_station": "Victoria Bus Terminal",
+                "exit_station": "Dwejra / San Lawrenz",
+                "direction": "direction Dwejra"
+              },
+              "notes": "Inside the Citadel walls, serves local Gozitan cheese and wine. Alternatives: Café Jubilee, Kcina tal-Barrakka.",
+              "latitude": 36.0457,
+              "longitude": 14.2389
+            },
+            {
+              "position": 5,
+              "place_name": "Il-Qala tad-Dwejra",
+              "start_time": "13:30",
+              "duration_minutes": 120,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 30,
+              "transit_details": {
+                "line": "Gozo Bus 311",
+                "boarding_station": "Dwejra / San Lawrenz",
+                "exit_station": "Marsalforn",
+                "direction": "direction Victoria then Bus 310 to Marsalforn"
+              },
+              "notes": "Scenic coastal hike around Dwejra Bay and Inland Sea; wear sturdy shoes.",
+              "latitude": 36.0467778,
+              "longitude": 14.1912207
+            },
+            {
+              "position": 6,
+              "place_name": "Il-Kċina Għawdxija",
+              "start_time": "16:00",
+              "duration_minutes": 90,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 35,
+              "transit_details": {
+                "line": "Gozo Bus 322 / taxi",
+                "boarding_station": "Marsalforn",
+                "exit_station": "Mġarr Ferry Terminal",
+                "direction": "direction Mġarr via Victoria"
+              },
+              "notes": "Bay near Marsalforn good for a late swim; restaurant on site for snacks.",
+              "latitude": 36.0304875,
+              "longitude": 14.2172205
+            },
+            {
+              "position": 7,
+              "place_name": "Il-Kartell Restaurant",
+              "start_time": "19:30",
+              "duration_minutes": 75,
+              "time_block": "dinner",
+              "cost_estimate_cents": 3500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": 0,
+              "transit_details": null,
+              "notes": "Back in St Julian's area after ferry; Maltese seafood. Alternatives: Paranga, Zest.",
+              "latitude": 35.922,
+              "longitude": 14.489
+            }
+          ]
+        },
+        {
+          "day_number": 5,
+          "date": "2026-10-27",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Popeye Village",
+              "start_time": "09:30",
+              "duration_minutes": 90,
+              "time_block": "morning",
+              "cost_estimate_cents": 1900,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 20,
+              "transit_details": {
+                "line": "Bus 101",
+                "boarding_station": "Mellieħa Bus Stop",
+                "exit_station": "Ċirkewwa / Anchor Bay",
+                "direction": "direction Ċirkewwa"
+              },
+              "notes": "Book tickets in advance online; includes entry to film sets and small beach.",
+              "latitude": 35.956,
+              "longitude": 14.342
+            },
+            {
+              "position": 2,
+              "place_name": "Blue Lagoon (Comino)",
+              "start_time": "11:30",
+              "duration_minutes": 210,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 2500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 40,
+              "transit_details": {
+                "line": "Comino Ferry",
+                "boarding_station": "Ċirkewwa Ferry Terminal",
+                "exit_station": "Blue Lagoon, Comino",
+                "direction": "direction Comino"
+              },
+              "notes": "Ferry from Ċirkewwa ~20 min; return last ferry around 17:00 in October.",
+              "latitude": 36.0144,
+              "longitude": 14.3287
+            },
+            {
+              "position": 3,
+              "place_name": "Munchies Mellieha",
+              "start_time": "15:30",
+              "duration_minutes": 60,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 45,
+              "transit_details": {
+                "line": "Bus 221",
+                "boarding_station": "Mellieħa",
+                "exit_station": "St Julian's / Spinola Bay",
+                "direction": "direction St Julian's"
+              },
+              "notes": "Late lunch after Blue Lagoon return. Alternatives: Arriva Café Mellieħa, Bouquet Garni.",
+              "latitude": 35.9572,
+              "longitude": 14.362
+            },
+            {
+              "position": 4,
+              "place_name": "Spinola Bay",
+              "start_time": "17:30",
+              "duration_minutes": 45,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 5,
+              "transit_details": null,
+              "notes": "Evening wind-down stroll along the bay before dinner.",
+              "latitude": 35.9215,
+              "longitude": 14.49
+            },
+            {
+              "position": 5,
+              "place_name": "Paranga Restaurant",
+              "start_time": "19:00",
+              "duration_minutes": 75,
+              "time_block": "dinner",
+              "cost_estimate_cents": 4000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": 0,
+              "transit_details": null,
+              "notes": "Upscale seafood on the waterfront, St George's Bay. Alternatives: Noni, Rosselli.",
+              "latitude": 35.921,
+              "longitude": 14.4895
+            }
+          ]
+        },
+        {
+          "day_number": 6,
+          "date": "2026-10-28",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Mdina",
+              "start_time": "09:00",
+              "duration_minutes": 150,
+              "time_block": "morning",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 5,
+              "transit_details": null,
+              "notes": "Bus 51/52 from Valletta or direct from St Julian's; best explored on foot inside the walls.",
+              "latitude": 35.8859,
+              "longitude": 14.4035
+            },
+            {
+              "position": 2,
+              "place_name": "Fontanella Tea Garden",
+              "start_time": "11:55",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 1800,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 45,
+              "transit_details": {
+                "line": "Bus 52",
+                "boarding_station": "Mdina Gate",
+                "exit_station": "St Julian's / Paceville",
+                "direction": "direction Valletta then change for St Julian's"
+              },
+              "notes": "Famous for cake and views over the island from Mdina's bastions. Alternatives: De Mondion, Bacchus.",
+              "latitude": 35.8862,
+              "longitude": 14.4038
+            },
+            {
+              "position": 3,
+              "place_name": "Luggage storage / hotel pack & checkout",
+              "start_time": "14:00",
+              "duration_minutes": 60,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 5,
+              "transit_details": null,
+              "notes": "Checkout was at 10:00 so arrange late checkout or store luggage at hotel reception.",
+              "latitude": 35.8999,
+              "longitude": 14.5154
+            },
+            {
+              "position": 4,
+              "place_name": "Spinola Bay",
+              "start_time": "15:05",
+              "duration_minutes": 60,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 5,
+              "transit_details": null,
+              "notes": "Final farewell stroll along the bay before heading to airport.",
+              "latitude": 35.9215,
+              "longitude": 14.49
+            },
+            {
+              "position": 5,
+              "place_name": "Bowls & Brunch St Julian's",
+              "start_time": "18:30",
+              "duration_minutes": 75,
+              "time_block": "dinner",
+              "cost_estimate_cents": 3000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": 0,
+              "transit_details": null,
+              "notes": "Early farewell dinner near hotel before airport transfer. Alternatives: Barracuda, Hugo's Lounge.",
+              "latitude": 35.9205,
+              "longitude": 14.49
+            }
+          ]
+        }
+      ]
+    },
+    "accommodation_suggestions": [
+      {
+        "title": "St Julian's accommodation confirmed",
+        "details": "9-11 Triq San Anglu, St Julian's. Check-in after 16:00, checkout at 10:00.",
+        "estimated_cost_cents": null
+      }
+    ],
+    "transport_suggestions": [
+      {
+        "title": "Malta Public Transport App",
+        "details": "Download the Tallinja app for real-time bus schedules; single ride ~€1.50, day pass ~€3.",
+        "estimated_cost_cents": 300
+      },
+      {
+        "title": "Gozo day: Bus X1 to Ċirkewwa",
+        "details": "Depart St Julian's ~06:30 on Bus X1 to reach Ċirkewwa ferry in time for 07:30 sailing.",
+        "estimated_cost_cents": 150
+      },
+      {
+        "title": "Gozo Channel Ferry",
+        "details": "Return ticket ~€5/person; runs every 45 min. Pay on board or book Gozo Channel app.",
+        "estimated_cost_cents": 500
+      },
+      {
+        "title": "Comino Ferry",
+        "details": "Captain Morgan or independent operators from Ċirkewwa; ~€12-15 return per person.",
+        "estimated_cost_cents": 1300
+      },
+      {
+        "title": "Airport transfer on Oct 28",
+        "details": "Bus X4 or Express from St Julian's to MIA ~45 min; taxi ~€20-25. Allow 2h before 23:30 flight.",
+        "estimated_cost_cents": 150
+      }
+    ],
+    "constraint_report": {
+      "hard_pass": false,
+      "best_effort": true,
+      "selected_candidate_id": "c1",
+      "violations": [
+        {
+          "code": "MANDATORY_PLACE_MISSING",
+          "severity": "hard",
+          "message": "Mandatory place 'citadella visitor‘s centre' never scheduled."
+        }
+      ],
+      "warnings": []
+    },
+    "score_report": {},
+    "message": "I couldn't fully resolve every constraint, but here's the closest workable itinerary - please double-check the flagged points and tell me how you'd like to adjust:\n\n**Needs your attention:**\n- [MANDATORY_PLACE_MISSING] Mandatory place 'citadella visitor‘s centre' never scheduled.\n\n---\n\nSix days split into Valletta sightseeing, south Malta coast, a full Gozo island day with all four Gozo must-visits, Comino+Popeye, and a leisurely Mdina final morning before the late-night flight. Here's your day-by-day breakdown:\n\n**Where you're based:** St Juliens, 9-11 Triq San Anglu - each full day starts and ends here.\n\n**Day 1 – Friday, Oct 23**\nSpinola Bay · Zest Restaurant\n\n**Day 2 – Saturday, Oct 24**\nSt. John's Co-Cathedral · Grandmaster's Palace · Nenu the Artisan Baker · Fort St. Elmo · Upper Barrakka Gardens (+1 more)\n\n**Day 3 – Sunday, Oct 25**\nMarsaxlokk · Blue Grotto · Carmen's Bar & Restaurant · Ħaġar Qim · Gululu\n\n**Day 4 – Monday, Oct 26**\nGozo Ferry boarding (Ċirkewwa) · Citadella Visitor's Centre · Citadella muzej · Ta' Rikardu · Il-Qala tad-Dwejra (+2 more)\n\n**Day 5 – Tuesday, Oct 27**\nPopeye Village · Blue Lagoon (Comino) · Munchies Mellieha · Spinola Bay · Paranga Restaurant\n\n**Day 6 – Wednesday, Oct 28**\nMdina · Fontanella Tea Garden · Spinola Bay · Bowls & Brunch St Julian's\n\n---\n**Getting around:**\n- **Malta Public Transport App** - Download the Tallinja app for real-time bus schedules; single ride ~€1.50, day pass ~€3.\n- **Gozo day: Bus X1 to Ċirkewwa** - Depart St Julian's ~06:30 on Bus X1 to reach Ċirkewwa ferry in time for 07:30 sailing.\n- **Gozo Channel Ferry** - Return ticket ~€5/person; runs every 45 min. Pay on board or book Gozo Channel app.\n- **Comino Ferry** - Captain Morgan or independent operators from Ċirkewwa; ~€12-15 return per person.\n- **Airport transfer on Oct 28** - Bus X4 or Express from St Julian's to MIA ~45 min; taxi ~€20-25. Allow 2h before 23:30 flight.\n\n**Accommodation:**\n- **St Julian's accommodation confirmed** - 9-11 Triq San Anglu, St Julian's. Check-in after 16:00, checkout at 10:00.\n",
+    "accommodation_location": {
+      "address": "St Juliens, 9-11 Triq San Anglu",
+      "latitude": 35.8999544,
+      "longitude": 14.5153826
+    }
+  }
+}

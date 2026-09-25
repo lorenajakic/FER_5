@@ -1,0 +1,1354 @@
+{
+  "timestamp": 1782149265,
+  "selected_candidate_id": "c1",
+  "candidates": [
+    {
+      "id": "c1",
+      "generation_rationale": "Woodbury ostaje cjelodnevni izlet, a Met je premjesten na zaseban dan s Central Parkom za pola dana muzeja.",
+      "assumptions": [
+        "Met i Woodbury zamijenili dane: Met sada Day 7, shopping/Woodbury rasporeden ranije",
+        "Doruckci u smjestaju osim navedenih kafica",
+        "LLM repair round 1"
+      ],
+      "preliminary_confidence": 0.75,
+      "validation": {
+        "candidate_id": "c1",
+        "hard_pass": true,
+        "violations": [],
+        "warnings": [
+          {
+            "code": "LONG_TRANSIT_LEG",
+            "severity": "soft",
+            "message": "Long transit leg ~67 km 'Woodbury Common Premium Outlets' -> 'Macy's Herald Square' - verify connections."
+          }
+        ]
+      },
+      "plan": {
+        "plan": {
+          "days": [
+            {
+              "day_number": 1,
+              "date": "2026-09-10",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Times Square",
+                  "start_time": "20:00",
+                  "duration_minutes": 60,
+                  "time_block": "evening",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Vecernja setnja uz neonske reklame blizu smjestaja.",
+                  "latitude": 40.758,
+                  "longitude": -73.9855
+                }
+              ]
+            },
+            {
+              "day_number": 2,
+              "date": "2026-09-11",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Jacob's Pickles",
+                  "start_time": "09:00",
+                  "duration_minutes": 75,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 2000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 12,
+                  "transit_details": null,
+                  "notes": "Obilni americki brunch.",
+                  "latitude": 40.7872,
+                  "longitude": -73.9759
+                },
+                {
+                  "position": 2,
+                  "place_name": "Levain Bakery",
+                  "start_time": "10:30",
+                  "duration_minutes": 30,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 800,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Kava i cookies usput.",
+                  "latitude": 40.779,
+                  "longitude": -73.98
+                },
+                {
+                  "position": 3,
+                  "place_name": "Central Park",
+                  "start_time": "11:15",
+                  "duration_minutes": 120,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 15,
+                  "transit_details": null,
+                  "notes": "Setnja ujutro, predah od guzve.",
+                  "latitude": 40.7829,
+                  "longitude": -73.9654
+                },
+                {
+                  "position": 4,
+                  "place_name": "The Loeb Boathouse",
+                  "start_time": "13:30",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": null,
+                  "notes": "Rucak uz jezero. Alternatives: Tavern on the Green, The Smith Lincoln Square.",
+                  "latitude": 40.7758,
+                  "longitude": -73.9707
+                },
+                {
+                  "position": 5,
+                  "place_name": "The Shops at Columbus Circle",
+                  "start_time": "15:05",
+                  "duration_minutes": 75,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": {
+                    "line": "Metro A",
+                    "boarding_station": "59 St-Columbus Circle",
+                    "exit_station": "59 St-Columbus Circle",
+                    "direction": "lokalna setnja"
+                  },
+                  "notes": "Trgovine uz Central Park.",
+                  "latitude": 40.7682,
+                  "longitude": -73.9819
+                },
+                {
+                  "position": 6,
+                  "place_name": "Fifth Avenue Shopping",
+                  "start_time": "16:30",
+                  "duration_minutes": 90,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 15,
+                  "transit_details": null,
+                  "notes": "Brendovi i izlozi.",
+                  "latitude": 40.7625,
+                  "longitude": -73.974
+                },
+                {
+                  "position": 7,
+                  "place_name": "Ess-a-Bagel",
+                  "start_time": "18:30",
+                  "duration_minutes": 75,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 3200,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Vecera - njujorski bagel. Alternatives: The Capital Grille, Smith & Wollensky.",
+                  "latitude": 40.7547,
+                  "longitude": -73.9712
+                }
+              ]
+            },
+            {
+              "day_number": 3,
+              "date": "2026-09-12",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Buvette",
+                  "start_time": "09:00",
+                  "duration_minutes": 75,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 2000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 15,
+                  "transit_details": null,
+                  "notes": "Francuski doruckak, croissanti i kava.",
+                  "latitude": 40.733,
+                  "longitude": -74.0033
+                },
+                {
+                  "position": 2,
+                  "place_name": "The High Line",
+                  "start_time": "10:30",
+                  "duration_minutes": 75,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Setnja parkom na bivsoj pruzi.",
+                  "latitude": 40.748,
+                  "longitude": -74.0048
+                },
+                {
+                  "position": 3,
+                  "place_name": "Chelsea Market",
+                  "start_time": "12:00",
+                  "duration_minutes": 90,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2200,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": {
+                    "line": "Metro C",
+                    "boarding_station": "14 St",
+                    "exit_station": "Spring St",
+                    "direction": "downtown smjer Brooklyn"
+                  },
+                  "notes": "Street food rucak. Alternatives: Los Tacos No.1, Friedman's.",
+                  "latitude": 40.7424,
+                  "longitude": -74.0061
+                },
+                {
+                  "position": 4,
+                  "place_name": "SoHo",
+                  "start_time": "14:00",
+                  "duration_minutes": 120,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": {
+                    "line": "Metro F",
+                    "boarding_station": "Broadway-Lafayette St",
+                    "exit_station": "2 Av",
+                    "direction": "smjer Lower East Side"
+                  },
+                  "notes": "Butici i moda, omiljeni kvart.",
+                  "latitude": 40.7233,
+                  "longitude": -74.003
+                },
+                {
+                  "position": 5,
+                  "place_name": "Katz's Delicatessen",
+                  "start_time": "16:30",
+                  "duration_minutes": 60,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 2500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Legendarni pastrami sendvic.",
+                  "latitude": 40.7223,
+                  "longitude": -73.9874
+                },
+                {
+                  "position": 6,
+                  "place_name": "Clinton Street Baking Co.",
+                  "start_time": "18:00",
+                  "duration_minutes": 75,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 3000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Vecera. Alternatives: Russ & Daughters, Dirt Candy.",
+                  "latitude": 40.7212,
+                  "longitude": -73.9839
+                }
+              ]
+            },
+            {
+              "day_number": 4,
+              "date": "2026-09-13",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Russ & Daughters Cafe",
+                  "start_time": "09:00",
+                  "duration_minutes": 75,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 2200,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 25,
+                  "transit_details": {
+                    "line": "Metro F",
+                    "boarding_station": "2 Av",
+                    "exit_station": "World Trade Center",
+                    "direction": "downtown smjer World Trade Center"
+                  },
+                  "notes": "Bagel s lososom, klasika.",
+                  "latitude": 40.7211,
+                  "longitude": -73.9884
+                },
+                {
+                  "position": 2,
+                  "place_name": "9/11 Memorial & Museum",
+                  "start_time": "10:30",
+                  "duration_minutes": 120,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 3300,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Rezervirati ulaznice unaprijed.",
+                  "latitude": 40.7115,
+                  "longitude": -74.0134
+                },
+                {
+                  "position": 3,
+                  "place_name": "Eataly Downtown",
+                  "start_time": "12:45",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2400,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": {
+                    "line": "Metro 4",
+                    "boarding_station": "Fulton St",
+                    "exit_station": "Brooklyn Bridge-City Hall",
+                    "direction": "smjer Brooklyn Bridge"
+                  },
+                  "notes": "Talijanski rucak. Alternatives: Brookfield Place, Le District.",
+                  "latitude": 40.7128,
+                  "longitude": -74.0113
+                },
+                {
+                  "position": 4,
+                  "place_name": "Brooklyn Bridge",
+                  "start_time": "14:30",
+                  "duration_minutes": 120,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 15,
+                  "transit_details": null,
+                  "notes": "Pjesacenje do Brooklyna, super fotke za zalazak.",
+                  "latitude": 40.7061,
+                  "longitude": -73.9969
+                },
+                {
+                  "position": 5,
+                  "place_name": "Cecconi's Dumbo",
+                  "start_time": "17:30",
+                  "duration_minutes": 90,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 4200,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Vecera u Dumbu uz pogled. Alternatives: Juliana's Pizza, The River Cafe.",
+                  "latitude": 40.7026,
+                  "longitude": -73.9903
+                }
+              ]
+            },
+            {
+              "day_number": 5,
+              "date": "2026-09-14",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Statue of Liberty",
+                  "start_time": "09:00",
+                  "duration_minutes": 180,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 2500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 30,
+                  "transit_details": {
+                    "line": "Metro 1",
+                    "boarding_station": "South Ferry",
+                    "exit_station": "Christopher St-Sheridan Sq",
+                    "direction": "uptown smjer Greenwich Village"
+                  },
+                  "notes": "Trajekt rezervirati unaprijed zbog guzve.",
+                  "latitude": 40.6892,
+                  "longitude": -74.0445
+                },
+                {
+                  "position": 2,
+                  "place_name": "Joe's Pizza Greenwich",
+                  "start_time": "12:30",
+                  "duration_minutes": 60,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 1500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 8,
+                  "transit_details": null,
+                  "notes": "Brzi rucak na nogama. Alternatives: Mamoun's Falafel, Sushi Nakazawa.",
+                  "latitude": 40.7307,
+                  "longitude": -74.0027
+                },
+                {
+                  "position": 3,
+                  "place_name": "Washington Square Park",
+                  "start_time": "13:45",
+                  "duration_minutes": 60,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 5,
+                  "transit_details": null,
+                  "notes": "Predah u parku.",
+                  "latitude": 40.7308,
+                  "longitude": -73.9973
+                },
+                {
+                  "position": 4,
+                  "place_name": "Greenwich Village Walk",
+                  "start_time": "14:50",
+                  "duration_minutes": 120,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Setnja kroz kvart.",
+                  "latitude": 40.7336,
+                  "longitude": -74.0027
+                },
+                {
+                  "position": 5,
+                  "place_name": "L'Artusi",
+                  "start_time": "17:30",
+                  "duration_minutes": 90,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 4500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Vecera u West Villageu. Alternatives: Carbone, Via Carota.",
+                  "latitude": 40.7376,
+                  "longitude": -74.0058
+                }
+              ]
+            },
+            {
+              "day_number": 6,
+              "date": "2026-09-15",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Woodbury Common Premium Outlets",
+                  "start_time": "09:30",
+                  "duration_minutes": 360,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 4500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 90,
+                  "transit_details": {
+                    "line": "Coach USA Shortline bus",
+                    "boarding_station": "Woodbury Common",
+                    "exit_station": "Port Authority Bus Terminal",
+                    "direction": "smjer Manhattan"
+                  },
+                  "notes": "Cjelodnevni shopping izvan grada, ulazna karta za bus ukljucena.",
+                  "latitude": 41.349,
+                  "longitude": -74.126
+                },
+                {
+                  "position": 2,
+                  "place_name": "Macy's Herald Square",
+                  "start_time": "17:30",
+                  "duration_minutes": 60,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 5,
+                  "transit_details": null,
+                  "notes": "Ogroman robni centar usput.",
+                  "latitude": 40.751,
+                  "longitude": -73.989
+                },
+                {
+                  "position": 3,
+                  "place_name": "Los Tacos No.1 Herald Square",
+                  "start_time": "18:45",
+                  "duration_minutes": 60,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 2000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Vecera - tacos. Alternatives: Keens Steakhouse, Koreatown BCD Tofu House.",
+                  "latitude": 40.7505,
+                  "longitude": -73.9892
+                }
+              ]
+            },
+            {
+              "day_number": 7,
+              "date": "2026-09-16",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "The Metropolitan Museum of Art",
+                  "start_time": "10:00",
+                  "duration_minutes": 210,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 3000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Ostaviti pola dana, ogroman muzej.",
+                  "latitude": 40.7794,
+                  "longitude": -73.9632
+                },
+                {
+                  "position": 2,
+                  "place_name": "The Capital Grille",
+                  "start_time": "13:40",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 3500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": {
+                    "line": "Metro 4",
+                    "boarding_station": "86 St",
+                    "exit_station": "Grand Central-42 St",
+                    "direction": "downtown smjer Grand Central"
+                  },
+                  "notes": "Rucak. Alternatives: Sarabeth's, The Smith.",
+                  "latitude": 40.7558,
+                  "longitude": -73.9763
+                },
+                {
+                  "position": 3,
+                  "place_name": "Grand Central Terminal",
+                  "start_time": "15:15",
+                  "duration_minutes": 45,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 12,
+                  "transit_details": null,
+                  "notes": "Spektakularan kolodvor za fotke.",
+                  "latitude": 40.7527,
+                  "longitude": -73.9772
+                },
+                {
+                  "position": 4,
+                  "place_name": "Empire State Building",
+                  "start_time": "16:15",
+                  "duration_minutes": 90,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 4400,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 18,
+                  "transit_details": null,
+                  "notes": "Pogled na grad, ostati do vecernjeg osvjetljenja.",
+                  "latitude": 40.7484,
+                  "longitude": -73.9857
+                },
+                {
+                  "position": 5,
+                  "place_name": "The Capital Grille",
+                  "start_time": "18:30",
+                  "duration_minutes": 90,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 4500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Vecera. Alternatives: Keens Steakhouse, Gallaghers Steakhouse.",
+                  "latitude": 40.7558,
+                  "longitude": -73.9763
+                }
+              ]
+            },
+            {
+              "day_number": 8,
+              "date": "2026-09-17",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Top of the Rock",
+                  "start_time": "09:30",
+                  "duration_minutes": 90,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 4000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 12,
+                  "transit_details": null,
+                  "notes": "Vidikovac s pogledom na Empire State.",
+                  "latitude": 40.7593,
+                  "longitude": -73.9794
+                },
+                {
+                  "position": 2,
+                  "place_name": "Ellen's Stardust Diner",
+                  "start_time": "11:30",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 8,
+                  "transit_details": null,
+                  "notes": "Rucak uz pjevajuce konobare. Alternatives: Junior's, Carmine's Times Square.",
+                  "latitude": null,
+                  "longitude": null
+                },
+                {
+                  "position": 3,
+                  "place_name": "Times Square",
+                  "start_time": "13:00",
+                  "duration_minutes": 90,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Zadnja setnja prije transfera na let, zavrsiti do 20:30.",
+                  "latitude": 40.758,
+                  "longitude": -73.9855
+                }
+              ]
+            }
+          ]
+        },
+        "accommodation_suggestions": [],
+        "transport_suggestions": [
+          {
+            "title": "7-day MetroCard / OMNY",
+            "details": "Neograniceni metro i autobus, tap OMNY beskontaktno.",
+            "estimated_cost_cents": 3400
+          },
+          {
+            "title": "Woodbury Common bus",
+            "details": "Coach USA Shortline povratni iz Port Authority, ~90 min u jednom smjeru.",
+            "estimated_cost_cents": 4500
+          }
+        ]
+      }
+    }
+  ],
+  "score_report": {
+    "candidates": [
+      {
+        "candidate_id": "c1",
+        "travel_efficiency_score": 0.8125,
+        "preference_fit_score": 0.6111,
+        "day_balance_score": 0.9549,
+        "schedule_quality_score": 0.9053,
+        "participant_fairness_score": 1.0,
+        "budget_fit_score": null,
+        "final_score": 0.8166
+      }
+    ],
+    "selected_candidate_id": "c1",
+    "weights": {
+      "travel_efficiency": 0.2778,
+      "preference_fit": 0.2778,
+      "day_balance": 0.1667,
+      "schedule_quality": 0.1667,
+      "participant_fairness": 0.1111
+    }
+  },
+  "final_structured": {
+    "plan": {
+      "days": [
+        {
+          "day_number": 1,
+          "date": "2026-09-10",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Times Square",
+              "start_time": "20:00",
+              "duration_minutes": 60,
+              "time_block": "evening",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Vecernja setnja uz neonske reklame blizu smjestaja.",
+              "latitude": 40.758,
+              "longitude": -73.9855
+            }
+          ]
+        },
+        {
+          "day_number": 2,
+          "date": "2026-09-11",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Jacob's Pickles",
+              "start_time": "09:00",
+              "duration_minutes": 75,
+              "time_block": "morning",
+              "cost_estimate_cents": 2000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 12,
+              "transit_details": null,
+              "notes": "Obilni americki brunch.",
+              "latitude": 40.7872,
+              "longitude": -73.9759
+            },
+            {
+              "position": 2,
+              "place_name": "Levain Bakery",
+              "start_time": "10:30",
+              "duration_minutes": 30,
+              "time_block": "morning",
+              "cost_estimate_cents": 800,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Kava i cookies usput.",
+              "latitude": 40.779,
+              "longitude": -73.98
+            },
+            {
+              "position": 3,
+              "place_name": "Central Park",
+              "start_time": "11:15",
+              "duration_minutes": 120,
+              "time_block": "morning",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 15,
+              "transit_details": null,
+              "notes": "Setnja ujutro, predah od guzve.",
+              "latitude": 40.7829,
+              "longitude": -73.9654
+            },
+            {
+              "position": 4,
+              "place_name": "The Loeb Boathouse",
+              "start_time": "13:30",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 20,
+              "transit_details": null,
+              "notes": "Rucak uz jezero. Alternatives: Tavern on the Green, The Smith Lincoln Square.",
+              "latitude": 40.7758,
+              "longitude": -73.9707
+            },
+            {
+              "position": 5,
+              "place_name": "The Shops at Columbus Circle",
+              "start_time": "15:05",
+              "duration_minutes": 75,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 20,
+              "transit_details": {
+                "line": "Metro A",
+                "boarding_station": "59 St-Columbus Circle",
+                "exit_station": "59 St-Columbus Circle",
+                "direction": "lokalna setnja"
+              },
+              "notes": "Trgovine uz Central Park.",
+              "latitude": 40.7682,
+              "longitude": -73.9819
+            },
+            {
+              "position": 6,
+              "place_name": "Fifth Avenue Shopping",
+              "start_time": "16:30",
+              "duration_minutes": 90,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 15,
+              "transit_details": null,
+              "notes": "Brendovi i izlozi.",
+              "latitude": 40.7625,
+              "longitude": -73.974
+            },
+            {
+              "position": 7,
+              "place_name": "Ess-a-Bagel",
+              "start_time": "18:30",
+              "duration_minutes": 75,
+              "time_block": "dinner",
+              "cost_estimate_cents": 3200,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Vecera - njujorski bagel. Alternatives: The Capital Grille, Smith & Wollensky.",
+              "latitude": 40.7547,
+              "longitude": -73.9712
+            }
+          ]
+        },
+        {
+          "day_number": 3,
+          "date": "2026-09-12",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Buvette",
+              "start_time": "09:00",
+              "duration_minutes": 75,
+              "time_block": "morning",
+              "cost_estimate_cents": 2000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 15,
+              "transit_details": null,
+              "notes": "Francuski doruckak, croissanti i kava.",
+              "latitude": 40.733,
+              "longitude": -74.0033
+            },
+            {
+              "position": 2,
+              "place_name": "The High Line",
+              "start_time": "10:30",
+              "duration_minutes": 75,
+              "time_block": "morning",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Setnja parkom na bivsoj pruzi.",
+              "latitude": 40.748,
+              "longitude": -74.0048
+            },
+            {
+              "position": 3,
+              "place_name": "Chelsea Market",
+              "start_time": "12:00",
+              "duration_minutes": 90,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2200,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 20,
+              "transit_details": {
+                "line": "Metro C",
+                "boarding_station": "14 St",
+                "exit_station": "Spring St",
+                "direction": "downtown smjer Brooklyn"
+              },
+              "notes": "Street food rucak. Alternatives: Los Tacos No.1, Friedman's.",
+              "latitude": 40.7424,
+              "longitude": -74.0061
+            },
+            {
+              "position": 4,
+              "place_name": "SoHo",
+              "start_time": "14:00",
+              "duration_minutes": 120,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 20,
+              "transit_details": {
+                "line": "Metro F",
+                "boarding_station": "Broadway-Lafayette St",
+                "exit_station": "2 Av",
+                "direction": "smjer Lower East Side"
+              },
+              "notes": "Butici i moda, omiljeni kvart.",
+              "latitude": 40.7233,
+              "longitude": -74.003
+            },
+            {
+              "position": 5,
+              "place_name": "Katz's Delicatessen",
+              "start_time": "16:30",
+              "duration_minutes": 60,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 2500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Legendarni pastrami sendvic.",
+              "latitude": 40.7223,
+              "longitude": -73.9874
+            },
+            {
+              "position": 6,
+              "place_name": "Clinton Street Baking Co.",
+              "start_time": "18:00",
+              "duration_minutes": 75,
+              "time_block": "dinner",
+              "cost_estimate_cents": 3000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Vecera. Alternatives: Russ & Daughters, Dirt Candy.",
+              "latitude": 40.7212,
+              "longitude": -73.9839
+            }
+          ]
+        },
+        {
+          "day_number": 4,
+          "date": "2026-09-13",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Russ & Daughters Cafe",
+              "start_time": "09:00",
+              "duration_minutes": 75,
+              "time_block": "morning",
+              "cost_estimate_cents": 2200,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 25,
+              "transit_details": {
+                "line": "Metro F",
+                "boarding_station": "2 Av",
+                "exit_station": "World Trade Center",
+                "direction": "downtown smjer World Trade Center"
+              },
+              "notes": "Bagel s lososom, klasika.",
+              "latitude": 40.7211,
+              "longitude": -73.9884
+            },
+            {
+              "position": 2,
+              "place_name": "9/11 Memorial & Museum",
+              "start_time": "10:30",
+              "duration_minutes": 120,
+              "time_block": "morning",
+              "cost_estimate_cents": 3300,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Rezervirati ulaznice unaprijed.",
+              "latitude": 40.7115,
+              "longitude": -74.0134
+            },
+            {
+              "position": 3,
+              "place_name": "Eataly Downtown",
+              "start_time": "12:45",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2400,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 20,
+              "transit_details": {
+                "line": "Metro 4",
+                "boarding_station": "Fulton St",
+                "exit_station": "Brooklyn Bridge-City Hall",
+                "direction": "smjer Brooklyn Bridge"
+              },
+              "notes": "Talijanski rucak. Alternatives: Brookfield Place, Le District.",
+              "latitude": 40.7128,
+              "longitude": -74.0113
+            },
+            {
+              "position": 4,
+              "place_name": "Brooklyn Bridge",
+              "start_time": "14:30",
+              "duration_minutes": 120,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 15,
+              "transit_details": null,
+              "notes": "Pjesacenje do Brooklyna, super fotke za zalazak.",
+              "latitude": 40.7061,
+              "longitude": -73.9969
+            },
+            {
+              "position": 5,
+              "place_name": "Cecconi's Dumbo",
+              "start_time": "17:30",
+              "duration_minutes": 90,
+              "time_block": "dinner",
+              "cost_estimate_cents": 4200,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Vecera u Dumbu uz pogled. Alternatives: Juliana's Pizza, The River Cafe.",
+              "latitude": 40.7026,
+              "longitude": -73.9903
+            }
+          ]
+        },
+        {
+          "day_number": 5,
+          "date": "2026-09-14",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Statue of Liberty",
+              "start_time": "09:00",
+              "duration_minutes": 180,
+              "time_block": "morning",
+              "cost_estimate_cents": 2500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 30,
+              "transit_details": {
+                "line": "Metro 1",
+                "boarding_station": "South Ferry",
+                "exit_station": "Christopher St-Sheridan Sq",
+                "direction": "uptown smjer Greenwich Village"
+              },
+              "notes": "Trajekt rezervirati unaprijed zbog guzve.",
+              "latitude": 40.6892,
+              "longitude": -74.0445
+            },
+            {
+              "position": 2,
+              "place_name": "Joe's Pizza Greenwich",
+              "start_time": "12:30",
+              "duration_minutes": 60,
+              "time_block": "lunch",
+              "cost_estimate_cents": 1500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 8,
+              "transit_details": null,
+              "notes": "Brzi rucak na nogama. Alternatives: Mamoun's Falafel, Sushi Nakazawa.",
+              "latitude": 40.7307,
+              "longitude": -74.0027
+            },
+            {
+              "position": 3,
+              "place_name": "Washington Square Park",
+              "start_time": "13:45",
+              "duration_minutes": 60,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 5,
+              "transit_details": null,
+              "notes": "Predah u parku.",
+              "latitude": 40.7308,
+              "longitude": -73.9973
+            },
+            {
+              "position": 4,
+              "place_name": "Greenwich Village Walk",
+              "start_time": "14:50",
+              "duration_minutes": 120,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Setnja kroz kvart.",
+              "latitude": 40.7336,
+              "longitude": -74.0027
+            },
+            {
+              "position": 5,
+              "place_name": "L'Artusi",
+              "start_time": "17:30",
+              "duration_minutes": 90,
+              "time_block": "dinner",
+              "cost_estimate_cents": 4500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Vecera u West Villageu. Alternatives: Carbone, Via Carota.",
+              "latitude": 40.7376,
+              "longitude": -74.0058
+            }
+          ]
+        },
+        {
+          "day_number": 6,
+          "date": "2026-09-15",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Woodbury Common Premium Outlets",
+              "start_time": "09:30",
+              "duration_minutes": 360,
+              "time_block": "morning",
+              "cost_estimate_cents": 4500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 90,
+              "transit_details": {
+                "line": "Coach USA Shortline bus",
+                "boarding_station": "Woodbury Common",
+                "exit_station": "Port Authority Bus Terminal",
+                "direction": "smjer Manhattan"
+              },
+              "notes": "Cjelodnevni shopping izvan grada, ulazna karta za bus ukljucena.",
+              "latitude": 41.349,
+              "longitude": -74.126
+            },
+            {
+              "position": 2,
+              "place_name": "Macy's Herald Square",
+              "start_time": "17:30",
+              "duration_minutes": 60,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 5,
+              "transit_details": null,
+              "notes": "Ogroman robni centar usput.",
+              "latitude": 40.751,
+              "longitude": -73.989
+            },
+            {
+              "position": 3,
+              "place_name": "Los Tacos No.1 Herald Square",
+              "start_time": "18:45",
+              "duration_minutes": 60,
+              "time_block": "dinner",
+              "cost_estimate_cents": 2000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Vecera - tacos. Alternatives: Keens Steakhouse, Koreatown BCD Tofu House.",
+              "latitude": 40.7505,
+              "longitude": -73.9892
+            }
+          ]
+        },
+        {
+          "day_number": 7,
+          "date": "2026-09-16",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "The Metropolitan Museum of Art",
+              "start_time": "10:00",
+              "duration_minutes": 210,
+              "time_block": "morning",
+              "cost_estimate_cents": 3000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Ostaviti pola dana, ogroman muzej.",
+              "latitude": 40.7794,
+              "longitude": -73.9632
+            },
+            {
+              "position": 2,
+              "place_name": "The Capital Grille",
+              "start_time": "13:40",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 3500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 20,
+              "transit_details": {
+                "line": "Metro 4",
+                "boarding_station": "86 St",
+                "exit_station": "Grand Central-42 St",
+                "direction": "downtown smjer Grand Central"
+              },
+              "notes": "Rucak. Alternatives: Sarabeth's, The Smith.",
+              "latitude": 40.7558,
+              "longitude": -73.9763
+            },
+            {
+              "position": 3,
+              "place_name": "Grand Central Terminal",
+              "start_time": "15:15",
+              "duration_minutes": 45,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 12,
+              "transit_details": null,
+              "notes": "Spektakularan kolodvor za fotke.",
+              "latitude": 40.7527,
+              "longitude": -73.9772
+            },
+            {
+              "position": 4,
+              "place_name": "Empire State Building",
+              "start_time": "16:15",
+              "duration_minutes": 90,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 4400,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 18,
+              "transit_details": null,
+              "notes": "Pogled na grad, ostati do vecernjeg osvjetljenja.",
+              "latitude": 40.7484,
+              "longitude": -73.9857
+            },
+            {
+              "position": 5,
+              "place_name": "The Capital Grille",
+              "start_time": "18:30",
+              "duration_minutes": 90,
+              "time_block": "dinner",
+              "cost_estimate_cents": 4500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Vecera. Alternatives: Keens Steakhouse, Gallaghers Steakhouse.",
+              "latitude": 40.7558,
+              "longitude": -73.9763
+            }
+          ]
+        },
+        {
+          "day_number": 8,
+          "date": "2026-09-17",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Top of the Rock",
+              "start_time": "09:30",
+              "duration_minutes": 90,
+              "time_block": "morning",
+              "cost_estimate_cents": 4000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 12,
+              "transit_details": null,
+              "notes": "Vidikovac s pogledom na Empire State.",
+              "latitude": 40.7593,
+              "longitude": -73.9794
+            },
+            {
+              "position": 2,
+              "place_name": "Ellen's Stardust Diner",
+              "start_time": "11:30",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 8,
+              "transit_details": null,
+              "notes": "Rucak uz pjevajuce konobare. Alternatives: Junior's, Carmine's Times Square.",
+              "latitude": null,
+              "longitude": null
+            },
+            {
+              "position": 3,
+              "place_name": "Times Square",
+              "start_time": "13:00",
+              "duration_minutes": 90,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Zadnja setnja prije transfera na let, zavrsiti do 20:30.",
+              "latitude": 40.758,
+              "longitude": -73.9855
+            }
+          ]
+        }
+      ]
+    },
+    "accommodation_suggestions": [],
+    "transport_suggestions": [
+      {
+        "title": "7-day MetroCard / OMNY",
+        "details": "Neograniceni metro i autobus, tap OMNY beskontaktno.",
+        "estimated_cost_cents": 3400
+      },
+      {
+        "title": "Woodbury Common bus",
+        "details": "Coach USA Shortline povratni iz Port Authority, ~90 min u jednom smjeru.",
+        "estimated_cost_cents": 4500
+      }
+    ],
+    "constraint_report": {
+      "hard_pass": true,
+      "selected_candidate_id": "c1",
+      "violations": [],
+      "warnings": [
+        {
+          "code": "LONG_TRANSIT_LEG",
+          "severity": "soft",
+          "message": "Long transit leg ~67 km 'Woodbury Common Premium Outlets' -> 'Macy's Herald Square' - verify connections."
+        }
+      ]
+    },
+    "score_report": {
+      "candidates": [
+        {
+          "candidate_id": "c1",
+          "travel_efficiency_score": 0.8125,
+          "preference_fit_score": 0.6111,
+          "day_balance_score": 0.9549,
+          "schedule_quality_score": 0.9053,
+          "participant_fairness_score": 1.0,
+          "budget_fit_score": null,
+          "final_score": 0.8166
+        }
+      ],
+      "selected_candidate_id": "c1",
+      "weights": {
+        "travel_efficiency": 0.2778,
+        "preference_fit": 0.2778,
+        "day_balance": 0.1667,
+        "schedule_quality": 0.1667,
+        "participant_fairness": 0.1111
+      }
+    },
+    "message": "Woodbury ostaje cjelodnevni izlet, a Met je premjesten na zaseban dan s Central Parkom za pola dana muzeja. Evo vašeg plana po danima:\n\n**Vaša baza:** Times Square, Manhattan, New York - svaki puni dan počinje i završava ovdje.\n\n**Dan 1 – četvrtak, 10. rujna**\nTimes Square\n\n**Dan 2 – petak, 11. rujna**\nJacob's Pickles · Levain Bakery · Central Park · The Loeb Boathouse · The Shops at Columbus Circle (+2 više)\n\n**Dan 3 – subota, 12. rujna**\nBuvette · The High Line · Chelsea Market · SoHo · Katz's Delicatessen (+1 više)\n\n**Dan 4 – nedjelja, 13. rujna**\nRuss & Daughters Cafe · 9/11 Memorial & Museum · Eataly Downtown · Brooklyn Bridge · Cecconi's Dumbo\n\n**Dan 5 – ponedjeljak, 14. rujna**\nStatue of Liberty · Joe's Pizza Greenwich · Washington Square Park · Greenwich Village Walk · L'Artusi\n\n**Dan 6 – utorak, 15. rujna**\nWoodbury Common Premium Outlets · Macy's Herald Square · Los Tacos No.1 Herald Square\n\n**Dan 7 – srijeda, 16. rujna**\nThe Metropolitan Museum of Art · The Capital Grille · Grand Central Terminal · Empire State Building · The Capital Grille\n\n**Dan 8 – četvrtak, 17. rujna**\nTop of the Rock · Ellen's Stardust Diner · Times Square\n\n---\n**Kretanje:**\n- **7-day MetroCard / OMNY** - Neograniceni metro i autobus, tap OMNY beskontaktno.\n- **Woodbury Common bus** - Coach USA Shortline povratni iz Port Authority, ~90 min u jednom smjeru.\n\n*Zabilježeno mekih ograničenja: 1 (tempo / budžet) - nema blokera.*",
+    "accommodation_location": {
+      "address": "Times Square, Manhattan, New York",
+      "latitude": 40.762379,
+      "longitude": -73.981451
+    }
+  }
+}

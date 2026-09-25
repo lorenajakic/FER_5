@@ -1,0 +1,132 @@
+<%
+  category_colors = {
+    "accommodation" => { bg: "bg-violet-50",  text: "text-violet-700", border: "border-violet-200", badge_bg: "bg-violet-100", badge_text: "text-violet-700" },
+    "activity"      => { bg: "bg-emerald-50", text: "text-emerald-700",border: "border-emerald-200",badge_bg: "bg-emerald-100",badge_text: "text-emerald-700"},
+    "transport"     => { bg: "bg-sky-50",     text: "text-sky-700",    border: "border-sky-200",    badge_bg: "bg-sky-100",    badge_text: "text-sky-700"    },
+    "other"         => { bg: "bg-gray-50",    text: "text-gray-600",   border: "border-gray-200",   badge_bg: "bg-gray-100",   badge_text: "text-gray-600"   }
+  }
+%>
+
+<div class="flex h-[400px] flex-col gap-5 overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 sm:p-7 lg:h-[calc(100vh-16rem)]">
+  <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+    <div class="min-w-0">
+      <h3 class="text-base font-semibold text-gray-900"><%= t("tickets.tab_heading") %></h3>
+    </div>
+    <%= link_to new_trip_ticket_path(trip), class: "inline-flex items-center gap-2 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition" do %>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+      <%= t("tickets.add_ticket") %>
+    <% end %>
+  </div>
+
+  <div class="flex flex-wrap gap-1.5">
+    <%= link_to trip_tickets_path(trip),
+        class: "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium transition border #{tickets_category_filter.blank? ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'}" do %>
+      <%= t("tickets.filters.all") %>
+    <% end %>
+    <% Ticket.categories.each_key do |cat| %>
+      <% colors = category_colors[cat] %>
+      <%= link_to trip_tickets_path(trip, category: cat),
+          class: "inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium transition border #{tickets_category_filter == cat ? "#{colors[:bg]} #{colors[:text]} #{colors[:border]}" : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'}" do %>
+        <%= t("tickets.categories.#{cat}") %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="flex-1 min-h-0 overflow-hidden">
+    <div class="h-full min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain pr-1 pt-2">
+    <% if tickets.empty? %>
+      <div class="flex h-full min-h-[220px] flex-col items-center justify-center rounded-2xl border border-dashed border-gray-200 bg-gray-50/60 py-14 px-6 text-center">
+        <span class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-50 text-indigo-400">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+        </span>
+        <p class="text-sm font-semibold text-gray-700"><%= t("tickets.empty_title") %></p>
+        <p class="mt-1 max-w-xs text-sm text-gray-500"><%= t("tickets.empty_hint") %></p>
+      </div>
+
+    <% else %>
+      <ul class="w-full max-w-full divide-y divide-gray-100 rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+        <% tickets.each do |ticket| %>
+          <% colors = category_colors[ticket.category] %>
+          <li class="bg-white hover:bg-gray-50/60 transition">
+            <div class="flex items-start gap-4 p-4 sm:p-5">
+
+            <div class="shrink-0 flex h-11 w-11 items-center justify-center rounded-xl <%= colors[:bg] %> <%= colors[:text] %>">
+              <% case ticket.category %>
+              <% when "accommodation" %>
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12M3 9h12M3 15h12" /></svg>
+              <% when "activity" %>
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c-.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" /></svg>
+              <% when "transport" %>
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
+              <% else %>
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+              <% end %>
+            </div>
+
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
+                  <div class="min-w-0">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <span class="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider <%= colors[:badge_bg] %> <%= colors[:badge_text] %>">
+                        <%= t("tickets.categories.#{ticket.category}") %>
+                      </span>
+                      <h4 class="text-sm font-semibold text-gray-900"><%= ticket.title %></h4>
+                    </div>
+                    <% if ticket.date.present? %>
+                      <p class="mt-0.5 text-xs text-gray-500"><%= l(ticket.date, format: :long) %></p>
+                    <% end %>
+                  </div>
+                  <% if ticket.cost_cents.present? %>
+                    <span class="shrink-0 text-sm font-semibold text-gray-800">
+                      <%= number_to_currency(ticket.cost_cents.to_f / 100, unit: ticket.cost_currency, format: "%n %u") %>
+                    </span>
+                  <% end %>
+                </div>
+
+                <% if ticket.details.present? %>
+                  <p class="mt-2 text-sm text-gray-500 line-clamp-2"><%= ticket.details %></p>
+                <% end %>
+
+                <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
+                  <div class="flex items-center gap-1.5">
+                    <% u = ticket.uploaded_by %>
+                    <% if u.avatar.attached? %>
+                      <%= image_tag u.avatar, class: "h-5 w-5 rounded-full object-cover", width: 20, height: 20, alt: "" %>
+                    <% else %>
+                      <span class="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-100 text-[9px] font-semibold text-indigo-600"><%= u.name.first.upcase %></span>
+                    <% end %>
+                    <span class="text-xs text-gray-400"><%= u.name %></span>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <% if ticket.file.attached? %>
+                      <%= link_to rails_blob_path(ticket.file, disposition: "inline"), target: "_blank", rel: "noopener noreferrer", class: "inline-flex items-center gap-1 rounded-md border border-gray-200 bg-white px-4 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 transition w-50" do %>
+                        <svg class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                        <%= ticket.file.content_type.to_s.include?("pdf") ? t("tickets.open_pdf") : t("tickets.open_image") %>
+                      <% end %>
+                    <% end %>
+                    <% if ticket.uploaded_by == current_user || trip.creator == current_user %>
+                      <%= link_to edit_trip_ticket_path(trip, ticket),
+                          class: "inline-flex items-center rounded-md border border-transparent p-1.5 text-gray-300 hover:text-indigo-500 hover:bg-indigo-50 hover:border-indigo-100 transition",
+                          title: t("common.edit") do %>
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" /></svg>
+                      <% end %>
+                      <%= button_to trip_ticket_path(trip, ticket), method: :delete,
+                          class: "inline-flex items-center rounded-md border border-transparent p-1.5 text-gray-300 hover:text-red-500 hover:bg-red-50 hover:border-red-100 transition",
+                          data: { turbo_confirm: t("tickets.confirm_delete") },
+                          title: t("common.delete") do %>
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" /></svg>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    </div>
+  </div>
+</div>

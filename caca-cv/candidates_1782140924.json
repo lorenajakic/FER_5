@@ -1,0 +1,528 @@
+{
+  "timestamp": 1782140924,
+  "selected_candidate_id": "c1",
+  "candidates": [
+    {
+      "id": "c1",
+      "generation_rationale": "Plan je minimalno izmijenjen u odnosu na prethodni – smještaj Clayton Hotel City of London u Cityju iskorišten je kao geografsko sidro pa je dan 2 reorganiziran da počinje od hotela prema istoku (Tower), zatim Southbank, bez odlaska u Notting Hill koji je previše udaljen.",
+      "assumptions": [
+        "Ryanair let slijeće u Stansted (STN) 14:30; transfer do hotela ~75 min, dolazak ~15:45.",
+        "Clayton Hotel City of London nalazi se na Aldgate/City adresi (EC3 zona).",
+        "Portobello Road Market i The Ledbury izbačeni – geografski su neučinkoviti s hotela u Cityju.",
+        "Dan 2 reorganiziran: Tower → Borough Market → Tate Modern → Southbank → večera u blizini.",
+        "Hyde Park jutarnja šetnja na dan odlaska zadržana jer je kratka i završava do 08:00."
+      ],
+      "preliminary_confidence": 0.93,
+      "validation": {
+        "candidate_id": "c1",
+        "hard_pass": true,
+        "violations": [],
+        "warnings": []
+      },
+      "plan": {
+        "plan": {
+          "days": [
+            {
+              "day_number": 1,
+              "date": "2026-07-31",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Westminster Bridge & Big Ben",
+                  "start_time": "16:30",
+                  "duration_minutes": 45,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Slobodan ulaz; idealno za prve fotografije Londona.",
+                  "latitude": 51.5007,
+                  "longitude": -0.1246
+                },
+                {
+                  "position": 2,
+                  "place_name": "Houses of Parliament & Victoria Embankment",
+                  "start_time": "17:25",
+                  "duration_minutes": 40,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 12,
+                  "transit_details": null,
+                  "notes": "Šetnja uz Temzu prema Westminsterskoj opatiji.",
+                  "latitude": 51.4995,
+                  "longitude": -0.1248
+                },
+                {
+                  "position": 3,
+                  "place_name": "Boisdale of Belgravia",
+                  "start_time": "18:30",
+                  "duration_minutes": 90,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 4500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Škotski steakhouse blizu Victorije; rezervacija preporučena. Alternative: Quilon (Victoria), The Ivy Chelsea Garden.",
+                  "latitude": 51.4952,
+                  "longitude": -0.1469
+                }
+              ]
+            },
+            {
+              "day_number": 2,
+              "date": "2026-08-01",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Tower of London",
+                  "start_time": "09:00",
+                  "duration_minutes": 120,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 3400,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 8,
+                  "transit_details": null,
+                  "notes": "Kupiti ulaznice online unaprijed kako bi se izbjegao red.",
+                  "latitude": 51.5081,
+                  "longitude": -0.0759
+                },
+                {
+                  "position": 2,
+                  "place_name": "Tower Bridge",
+                  "start_time": "11:08",
+                  "duration_minutes": 45,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 1200,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 15,
+                  "transit_details": null,
+                  "notes": "Ulaznica uključuje pristup staklenom mostu i strojarnici.",
+                  "latitude": 51.5055,
+                  "longitude": -0.0754
+                },
+                {
+                  "position": 3,
+                  "place_name": "Borough Market",
+                  "start_time": "12:08",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 1800,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Jedan od najboljih street food tržnica u Londonu – brojni štandovi za ručak. Alternative: Padella Pasta (Borough), Tas Restaurant (London Bridge).",
+                  "latitude": 51.5051,
+                  "longitude": -0.0905
+                },
+                {
+                  "position": 4,
+                  "place_name": "Tate Modern",
+                  "start_time": "13:33",
+                  "duration_minutes": 90,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "Stalni postav besplatan; privremene izložbe mogu imati ulaznicu.",
+                  "latitude": 51.5076,
+                  "longitude": -0.0994
+                },
+                {
+                  "position": 5,
+                  "place_name": "Millennium Bridge & St Paul's Cathedral (vanjski pogled)",
+                  "start_time": "15:13",
+                  "duration_minutes": 40,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 12,
+                  "transit_details": null,
+                  "notes": "Besplatan pogled na kupolu Sv. Pavla s mosta.",
+                  "latitude": 51.5098,
+                  "longitude": -0.0985
+                },
+                {
+                  "position": 6,
+                  "place_name": "Sky Garden",
+                  "start_time": "16:05",
+                  "duration_minutes": 60,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 8,
+                  "transit_details": null,
+                  "notes": "Besplatan ulaz; obavezna besplatna rezervacija na skygarden.london unaprijed.",
+                  "latitude": 51.5115,
+                  "longitude": -0.0832
+                },
+                {
+                  "position": 7,
+                  "place_name": "Hawksmoor Guildhall",
+                  "start_time": "18:00",
+                  "duration_minutes": 90,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 5000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Ikonski londonski steakhouse u Cityju; rezervacija preporučena. Alternative: Café Below (City), Bread Street Kitchen.",
+                  "latitude": 51.5156,
+                  "longitude": -0.0919
+                }
+              ]
+            },
+            {
+              "day_number": 3,
+              "date": "2026-08-02",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "Hyde Park – jutarnja šetnja",
+                  "start_time": "07:00",
+                  "duration_minutes": 45,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 0,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": null,
+                  "transit_details": null,
+                  "notes": "Slobodan ulaz; završiti najkasnije 07:45 kako bi se na vrijeme stiglo na aerodrom.",
+                  "latitude": 51.5073,
+                  "longitude": -0.1657
+                }
+              ]
+            }
+          ]
+        },
+        "accommodation_suggestions": [
+          {
+            "title": "Clayton Hotel City of London (odabrani smještaj)",
+            "details": "Smještaj potvrđen od korisnice; idealna lokacija u Cityju za Tower, Southbank i Sky Garden bez dugih transfera.",
+            "estimated_cost_cents": 30000
+          },
+          {
+            "title": "Brit Hotels Earls Court (alternativa)",
+            "details": "43-45 Longridge Road – ocjena 8.2, GBP 239 za 2 noći, dobra District line veza prema svim destinacijama.",
+            "estimated_cost_cents": 28200
+          },
+          {
+            "title": "Safestay London Elephant & Castle (budžetna alternativa)",
+            "details": "144-152 Walworth Road – GBP 38 za 2 noći, blizu Southbanka i Borough Marketa.",
+            "estimated_cost_cents": 4500
+          }
+        ],
+        "transport_suggestions": [
+          {
+            "title": "Stansted Express – aerodrom do centra",
+            "details": "STN → Liverpool Street za ~50 min, karta ~GBP 19.90 jednosmjerno. Polazak s aerodroma oko 15:00 da se stigne na hotel do 16:30.",
+            "estimated_cost_cents": 2350
+          },
+          {
+            "title": "Oyster / Contactless kartica",
+            "details": "Dnevna kapa za Zone 1-2 iznosi ~GBP 8.10; kupiti pri dolasku na Liverpool Streetu ili na aerodromu.",
+            "estimated_cost_cents": 810
+          },
+          {
+            "title": "National Express coach – aerodrom do centra (budžetna opcija)",
+            "details": "STN → Victoria Coach Station ~1h45min, od ~GBP 6 unaprijed online.",
+            "estimated_cost_cents": 710
+          }
+        ]
+      }
+    }
+  ],
+  "score_report": {
+    "candidates": [
+      {
+        "candidate_id": "c1",
+        "travel_efficiency_score": 1.0,
+        "preference_fit_score": 1.0,
+        "day_balance_score": 1.0,
+        "schedule_quality_score": 0.8498,
+        "participant_fairness_score": 1.0,
+        "budget_fit_score": 0.94,
+        "final_score": 0.9715
+      }
+    ],
+    "selected_candidate_id": "c1",
+    "weights": {
+      "travel_efficiency": 0.25,
+      "preference_fit": 0.25,
+      "day_balance": 0.15,
+      "schedule_quality": 0.15,
+      "participant_fairness": 0.1,
+      "budget_fit": 0.1
+    }
+  },
+  "final_structured": {
+    "plan": {
+      "days": [
+        {
+          "day_number": 1,
+          "date": "2026-07-31",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Westminster Bridge & Big Ben",
+              "start_time": "16:30",
+              "duration_minutes": 45,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Slobodan ulaz; idealno za prve fotografije Londona.",
+              "latitude": 51.5007,
+              "longitude": -0.1246
+            },
+            {
+              "position": 2,
+              "place_name": "Houses of Parliament & Victoria Embankment",
+              "start_time": "17:25",
+              "duration_minutes": 40,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 12,
+              "transit_details": null,
+              "notes": "Šetnja uz Temzu prema Westminsterskoj opatiji.",
+              "latitude": 51.4995,
+              "longitude": -0.1248
+            },
+            {
+              "position": 3,
+              "place_name": "Boisdale of Belgravia",
+              "start_time": "18:30",
+              "duration_minutes": 90,
+              "time_block": "dinner",
+              "cost_estimate_cents": 4500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Škotski steakhouse blizu Victorije; rezervacija preporučena. Alternative: Quilon (Victoria), The Ivy Chelsea Garden.",
+              "latitude": 51.4952,
+              "longitude": -0.1469
+            }
+          ]
+        },
+        {
+          "day_number": 2,
+          "date": "2026-08-01",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Tower of London",
+              "start_time": "09:00",
+              "duration_minutes": 120,
+              "time_block": "morning",
+              "cost_estimate_cents": 3400,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 8,
+              "transit_details": null,
+              "notes": "Kupiti ulaznice online unaprijed kako bi se izbjegao red.",
+              "latitude": 51.5081,
+              "longitude": -0.0759
+            },
+            {
+              "position": 2,
+              "place_name": "Tower Bridge",
+              "start_time": "11:08",
+              "duration_minutes": 45,
+              "time_block": "morning",
+              "cost_estimate_cents": 1200,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 15,
+              "transit_details": null,
+              "notes": "Ulaznica uključuje pristup staklenom mostu i strojarnici.",
+              "latitude": 51.5055,
+              "longitude": -0.0754
+            },
+            {
+              "position": 3,
+              "place_name": "Borough Market",
+              "start_time": "12:08",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 1800,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Jedan od najboljih street food tržnica u Londonu – brojni štandovi za ručak. Alternative: Padella Pasta (Borough), Tas Restaurant (London Bridge).",
+              "latitude": 51.5051,
+              "longitude": -0.0905
+            },
+            {
+              "position": 4,
+              "place_name": "Tate Modern",
+              "start_time": "13:33",
+              "duration_minutes": 90,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "Stalni postav besplatan; privremene izložbe mogu imati ulaznicu.",
+              "latitude": 51.5076,
+              "longitude": -0.0994
+            },
+            {
+              "position": 5,
+              "place_name": "Millennium Bridge & St Paul's Cathedral (vanjski pogled)",
+              "start_time": "15:13",
+              "duration_minutes": 40,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 12,
+              "transit_details": null,
+              "notes": "Besplatan pogled na kupolu Sv. Pavla s mosta.",
+              "latitude": 51.5098,
+              "longitude": -0.0985
+            },
+            {
+              "position": 6,
+              "place_name": "Sky Garden",
+              "start_time": "16:05",
+              "duration_minutes": 60,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 8,
+              "transit_details": null,
+              "notes": "Besplatan ulaz; obavezna besplatna rezervacija na skygarden.london unaprijed.",
+              "latitude": 51.5115,
+              "longitude": -0.0832
+            },
+            {
+              "position": 7,
+              "place_name": "Hawksmoor Guildhall",
+              "start_time": "18:00",
+              "duration_minutes": 90,
+              "time_block": "dinner",
+              "cost_estimate_cents": 5000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Ikonski londonski steakhouse u Cityju; rezervacija preporučena. Alternative: Café Below (City), Bread Street Kitchen.",
+              "latitude": 51.5156,
+              "longitude": -0.0919
+            }
+          ]
+        },
+        {
+          "day_number": 3,
+          "date": "2026-08-02",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "Hyde Park – jutarnja šetnja",
+              "start_time": "07:00",
+              "duration_minutes": 45,
+              "time_block": "morning",
+              "cost_estimate_cents": 0,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": null,
+              "transit_details": null,
+              "notes": "Slobodan ulaz; završiti najkasnije 07:45 kako bi se na vrijeme stiglo na aerodrom.",
+              "latitude": 51.5073,
+              "longitude": -0.1657
+            }
+          ]
+        }
+      ]
+    },
+    "accommodation_suggestions": [
+      {
+        "title": "Clayton Hotel City of London (odabrani smještaj)",
+        "details": "Smještaj potvrđen od korisnice; idealna lokacija u Cityju za Tower, Southbank i Sky Garden bez dugih transfera.",
+        "estimated_cost_cents": 30000
+      },
+      {
+        "title": "Brit Hotels Earls Court (alternativa)",
+        "details": "43-45 Longridge Road – ocjena 8.2, GBP 239 za 2 noći, dobra District line veza prema svim destinacijama.",
+        "estimated_cost_cents": 28200
+      },
+      {
+        "title": "Safestay London Elephant & Castle (budžetna alternativa)",
+        "details": "144-152 Walworth Road – GBP 38 za 2 noći, blizu Southbanka i Borough Marketa.",
+        "estimated_cost_cents": 4500
+      }
+    ],
+    "transport_suggestions": [
+      {
+        "title": "Stansted Express – aerodrom do centra",
+        "details": "STN → Liverpool Street za ~50 min, karta ~GBP 19.90 jednosmjerno. Polazak s aerodroma oko 15:00 da se stigne na hotel do 16:30.",
+        "estimated_cost_cents": 2350
+      },
+      {
+        "title": "Oyster / Contactless kartica",
+        "details": "Dnevna kapa za Zone 1-2 iznosi ~GBP 8.10; kupiti pri dolasku na Liverpool Streetu ili na aerodromu.",
+        "estimated_cost_cents": 810
+      },
+      {
+        "title": "National Express coach – aerodrom do centra (budžetna opcija)",
+        "details": "STN → Victoria Coach Station ~1h45min, od ~GBP 6 unaprijed online.",
+        "estimated_cost_cents": 710
+      }
+    ],
+    "constraint_report": {
+      "hard_pass": true,
+      "selected_candidate_id": "c1",
+      "violations": [],
+      "warnings": []
+    },
+    "score_report": {
+      "candidates": [
+        {
+          "candidate_id": "c1",
+          "travel_efficiency_score": 1.0,
+          "preference_fit_score": 1.0,
+          "day_balance_score": 1.0,
+          "schedule_quality_score": 0.8498,
+          "participant_fairness_score": 1.0,
+          "budget_fit_score": 0.94,
+          "final_score": 0.9715
+        }
+      ],
+      "selected_candidate_id": "c1",
+      "weights": {
+        "travel_efficiency": 0.25,
+        "preference_fit": 0.25,
+        "day_balance": 0.15,
+        "schedule_quality": 0.15,
+        "participant_fairness": 0.1,
+        "budget_fit": 0.1
+      }
+    },
+    "message": "Plan je minimalno izmijenjen u odnosu na prethodni – smještaj Clayton Hotel City of London u Cityju iskorišten je kao geografsko sidro pa je dan 2 reorganiziran da počinje od hotela prema istoku (Tower), zatim Southbank, bez odlaska u Notting Hill koji je previše udaljen. Evo vašeg plana po danima:\n\n**Vaša baza:** Clayton Hotel City of London - svaki puni dan počinje i završava ovdje.\n\n**Dan 1 – petak, 31. srpnja**\nWestminster Bridge & Big Ben · Houses of Parliament & Victoria Embankment · Boisdale of Belgravia\n\n**Dan 2 – subota, 1. kolovoza**\nTower of London · Tower Bridge · Borough Market · Tate Modern · Millennium Bridge & St Paul's Cathedral (vanjski pogled) (+2 više)\n\n**Dan 3 – nedjelja, 2. kolovoza**\nHyde Park – jutarnja šetnja\n\n---\n**Kretanje:**\n- **Stansted Express – aerodrom do centra** - STN → Liverpool Street za ~50 min, karta ~GBP 19.90 jednosmjerno. Polazak s aerodroma oko 15:00 da se stigne na hotel do 16:30.\n- **Oyster / Contactless kartica** - Dnevna kapa za Zone 1-2 iznosi ~GBP 8.10; kupiti pri dolasku na Liverpool Streetu ili na aerodromu.\n- **National Express coach – aerodrom do centra (budžetna opcija)** - STN → Victoria Coach Station ~1h45min, od ~GBP 6 unaprijed online.\n\n**Smještaj:**\n- **Clayton Hotel City of London (odabrani smještaj)** - Smještaj potvrđen od korisnice; idealna lokacija u Cityju za Tower, Southbank i Sky Garden bez dugih transfera.\n- **Brit Hotels Earls Court (alternativa)** - 43-45 Longridge Road – ocjena 8.2, GBP 239 za 2 noći, dobra District line veza prema svim destinacijama.\n- **Safestay London Elephant & Castle (budžetna alternativa)** - 144-152 Walworth Road – GBP 38 za 2 noći, blizu Southbanka i Borough Marketa.\n",
+    "accommodation_location": {
+      "address": "Clayton Hotel City of London",
+      "latitude": 51.5157,
+      "longitude": -0.0918
+    }
+  }
+}

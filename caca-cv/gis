@@ -1,0 +1,137 @@
+Sljedećim kodom sam županije grupirala u 5 grupa:
+
+CREATE TABLE regions AS
+SELECT
+  CASE
+    WHEN gid IN (6, 10, 14) THEN 1
+    WHEN gid IN (5, 7, 15, 21) THEN 2
+    WHEN gid IN (1, 4, 16, 20) THEN 3
+    WHEN gid IN (3, 12, 13, 19) THEN 4
+    WHEN gid IN (2, 8, 9, 11, 17, 18) THEN 5
+  END AS id,
+  ST_Union(geom) AS geom
+FROM county
+GROUP BY id;
+
+-> tablica regions sadrži 5 n-torki, i 2 atributa, a atributi su id regije i geom regije.
+-> county je tablica 1 iz gis tutorijala
+
+U QGIS-u sam odabrala Symbology opciju u Layer Styling prozoru. Odabrala sam kategorizaciju(Categorized) po ID-u. Klikom na gumb classify prikazuje se rezultat.
+   
+Izračunala sam površinu svake županije, zatim sam ih grupirala metodom pokušaja i greške,
+zbrajajući površine dok svaka regija nije približno jednaka. Također sam osigurala da su regije kontinuirane (susjedne županije).
+Da, to je težak probelem particioniranja grafa, a posebno ako imamo još više "vrhova".
+
+
+WITH rivers AS (
+  SELECT name, ST_Union(geom) AS geom, ROUND(ST_Length(ST_Union(geom))) AS len
+  FROM waterways
+  WHERE fclass = 'river' AND name IS NOT NULL
+  GROUP BY name
+)
+
+SELECT rivers.name, len,
+  ROUND((SUM(ST_Length(ST_Intersection(rivers.geom, state.geom))) * 100 / rivers.len)) || '%' AS len_in_croatia
+FROM rivers, state
+WHERE state.name_0 = 'Croatia'
+GROUP BY rivers.name, rivers.len, rivers.geom
+ORDER BY len DESC;
+
+U QGis-u sam prvo dodala layer state i layer waterways.
+Nakon toga dodala sam filter da se rijeke prikazuju crvenom bojom te filter za Savu plave boje.
+Filteri se dodaju Symbology Rule Based opciji.
+Filteri:
+   -> "fclass" = 'river'
+	-> "name" = 'Sava'
+      
+Imena rijeka dodala sam opcijom Labels, a Value sam postavila na name.
+
+
+1.
+SELECT waterways.gid, waterways.name, MIN(st_distance(waterways.geom, buildings.geom)) AS min_distance
+FROM waterways, buildings
+WHERE waterways.fclass = 'river' AND river waterways.name IS NOT NULL
+GROUP BY waterways.gid, waterways.name
+
+Upit se vrtio 45 minuta, a st_distance ne koristi spatial index.
+
+SELECT waterways.gid, waterways.name, MIN(st_distance(waterways.geom, buildings.geom)) AS min_distance
+FROM waterways
+JOIN buildings ON st_dwithin(waterways.geom, buildings.geom, 4800)
+WHERE waterways.fclass = 'river' AND river waterways.name IS NOT NULL
+GROUP BY waterways.gid, waterways.name
+ORDER BY waterways.gid;
+
+Upit se vrtio 30 sekundi, bio je znatno brži zato što koristi navedeni index.
+
+SELECT waterways.gid, waterways.name, MIN(st_distance(waterways.geom, buildings.geom)) AS min_distance
+FROM waterways, buildings
+WHERE waterways.fclass = 'river' AND buildings.geom && st_expand(waterways.geom, 500) AND river waterways.name IS NOT NULL
+GROUP BY waterways.gid, waterways.name;
+
+Upit se vrtio 19 sekundi i koristio je spatial index.
+
+Rijeke s najmanjom udaljenošću su: 
+'Kupa', 'Lika', 'Cetina', 'Veličanka', 'Šumetlica', 'Tunel Boljunčica'
+   
+U QGis-u sam prvo dodala layer state i layer rivers. -> rivers je tablica u koju sam izdvojila samo rijeke, mogli smo samo dodati i filter "fclass"='river', 
+kod za kreiranje tablice naveden je ispod
+Nakon toga dodala sam filter da se prikazuju rijeke s najmanjom udaljenošću.
+Filteri se dodaju Symbology Rule Based opciji.
+Filter:
+->"name" IN (
+  'Kupa',
+  'Lika',
+  'Cetina',
+  'Veličanka',
+  'Šumetlica',
+  'Tunel Boljunčica'
+)
+
+2.
+   
+CREATE TABLE rivers AS
+    SELECT waterways.name, ST_Union(geom) AS geom
+    FROM waterways
+    WHERE waterways.fclass = 'river' AND waterways.name IS NOT NULL
+    GROUP BY waterways.name
+
+Sljedećim upitom dobivamo rijeke i njihov isoFactor:
+SELECT rivers.name, 100 * (SUM(st_area(buildings.geom)) / st_area(st_buffer(rivers.geom, 100))) AS isoFactor
+FROM rivers JOIN buildings ON ST_DWithin(rivers.geom, buildings.geom, 100)
+GROUP BY rivers.name, rivers.geom
+ORDER BY isoFactor DESC;
+
+Najmanje izolirana rijek je rijeka Jadro.
+U QGis-u sam prvo dodala layer state i layer rivers.
+Isto kao u prethodnom zadataku, odabrala sam Symbology Rule Based opciju i dodala sljedeću filter: "name"='Jadro'.
+U oba podzadatka dodala sam i labels.
+
+
+CREATE TABLE forest_percent AS
+WITH forst_county AS (
+    SELECT county.name_1, county.geom, ST_Intersection(county.geom, landuse.geom) AS p
+    FROM county JOIN landuse ON landuse.fclass = 'forest'
+)
+SELECT name_1, geom, ROUND(SUM(ST_Area(p)) / ST_Area(geom) * 100) || '%' AS p
+FROM forst_county
+GROUP BY name_1, geom;
+
+Tablica forest_percent ima 3 stupca, ime zupanije, geom zupanije i udio šuma u površini županije u obliku postotka.
+   
+U QGisu sam u layer stavila upravo tu tablicu.
+Symbiology sam postavila na opciju Categorized, Value na p, tako da se boje određuju baš po tom postotku. Za Color map sam odabrala greens.
+   
+Za labels je bilo potrebno odabrati Single labels, a za Value sam odabrala Expression: "name_1" +  ', p=' + "p".
+
+
+CREATE TABLE hospitals AS
+SELECT name, geom, ST_Centroid(pois_a.geom) c
+FROM pois_a
+WHERE pois_a.fclass = 'hospital';
+
+SQL kodom sam napravila centroide za klasu 'hospital'.
+Zatim sam centroide i county prikazala na karti.
+Nakon toga sam u Processingc Toolboxu odabrala Vector Geometry i u layers dodala Voroni polygons, a u opciju Input layer sam stavila hospitals.c.
+Na kraju sam trebala smanjiti opcaity na layeru Voroni polygons kako bi se vidjela karta s bolnicama ispod. 
+Dodala sam labele za bolnice i promijenila boju.

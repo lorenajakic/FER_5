@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  db:
+    image: ankane/pgvector 
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: bazepodataka
+      POSTGRES_DB: ankanePgVector
+    ports:
+      - "55432:5432" 
+# The second number (5432) is the port inside the Docker container where PostgreSQL is listening. By default, PostgreSQL uses port 5432, and it remains the same inside the container.
+# The first number (55432) is the port on your local machine (host). When we connect to localhost:55432, Docker forwards that traffic to 5432 inside the container.
+# If port 5432 on your machine is not in use, you can also write them the same way: 5432:5432 
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

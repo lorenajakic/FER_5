@@ -1,0 +1,151 @@
+<div id="itinerary_panel">
+  <% if itinerary.nil? || itinerary.days.empty? %>
+    <div class="bg-white border border-gray-200 rounded-2xl p-10 text-center text-gray-400">
+      <svg class="h-10 w-10 mx-auto mb-3 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      <p class="text-sm font-medium"><%= t("itinerary.panel.no_itinerary") %></p>
+      <p class="text-xs mt-1"><%= t("itinerary.panel.no_itinerary_hint") %></p>
+    </div>
+  <% else %>
+    <%
+      days_json = itinerary.days.to_json
+      places_json = trip.places.map { |p|
+        { name: p.name, latitude: p.latitude.to_f, longitude: p.longitude.to_f, category: p.category.to_s }
+      }.to_json
+      first_day = itinerary.days.first
+    %>
+    <% accommodation_json = itinerary.accommodation_location.to_json %>
+    <%
+      travel_method_labels = {
+        "transit"  => t("itinerary.panel.travel_methods.transit"),
+        "walking"  => t("itinerary.panel.travel_methods.walking"),
+        "driving"  => t("itinerary.panel.travel_methods.driving"),
+        "cycling"  => t("itinerary.panel.travel_methods.cycling"),
+        "taxi"     => t("itinerary.panel.travel_methods.taxi")
+      }
+    %>
+    <div data-controller="itinerary-map"
+         data-itinerary-map-days-value="<%= days_json %>"
+         data-itinerary-map-places-value="<%= places_json %>"
+         data-itinerary-map-accommodation-value="<%= accommodation_json %>"
+         data-itinerary-map-accommodation-label-value="<%= t('trips.show.accommodation_label') %>"
+         data-itinerary-map-persist-key-value="<%= trip.id %>"
+         data-itinerary-map-day-label-value="<%= t('itinerary.panel.day') %>"
+         data-itinerary-map-transport-label-value="<%= t('itinerary.panel.transport_to_next') %>"
+         data-itinerary-map-travel-methods-value="<%= travel_method_labels.to_json %>"
+         data-itinerary-map-locale-value="<%= I18n.locale %>">
+
+      <div class="flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 mb-4">
+        <button data-action="itinerary-map#prevDay"
+                data-itinerary-map-target="prevBtn"
+                class="flex items-center justify-center h-8 w-8 rounded-lg hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition">
+          <svg class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <div class="text-center" data-itinerary-map-target="dayHeader">
+          <p class="text-sm font-semibold text-gray-800"><%= t("itinerary.panel.day") %> <%= first_day["day_number"] %> / <%= itinerary.days.length %></p>
+          <p class="text-xs text-gray-500"><%= l(Date.parse(first_day["date"]), format: :day_header) rescue first_day["date"] %></p>
+        </div>
+
+        <button data-action="itinerary-map#nextDay"
+                data-itinerary-map-target="nextBtn"
+                class="flex items-center justify-center h-8 w-8 rounded-lg hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition">
+          <svg class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex gap-4 overflow-hidden" style="height: 520px;">
+
+        <div class="shrink-0 overflow-y-auto" style="width: 288px;">
+          <% itinerary.days.each_with_index do |day, i| %>
+            <ul class="sortable-activities <%= i > 0 ? 'hidden' : '' %>"
+                data-itinerary-map-target="dayList"
+                data-day="<%= day["day_number"] %>"
+                data-date="<%= day["date"] %>">
+
+              <% (day["activities"] || []).each_with_index do |activity, j| %>
+                <li data-activity='<%= activity.to_json %>'
+                    data-day="<%= day["day_number"] %>"
+                    class="mb-1">
+
+                  <div class="flex items-start gap-3 bg-white border border-gray-200 rounded-xl px-3 py-2.5 hover:border-indigo-200 hover:bg-indigo-50/20 transition">
+                    <span data-activity-badge
+                          class="shrink-0 mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 text-[11px] font-bold text-white">
+                      <%= j + 1 %>
+                    </span>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-medium text-gray-800 truncate"><%= activity["place_name"] %></p>
+                      <div class="flex items-center gap-2 mt-0.5 flex-wrap">
+                        <% if activity["start_time"] %>
+                          <span class="text-xs text-indigo-600 font-medium"><%= activity["start_time"] %></span>
+                        <% end %>
+                        <% if activity["duration_minutes"] %>
+                          <span class="text-xs text-gray-400"><%= activity["duration_minutes"] %>min</span>
+                        <% end %>
+                        <% if activity["time_block"] %>
+                          <span class="inline-flex items-center rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-gray-500 capitalize">
+                            <%= activity["time_block"] %>
+                          </span>
+                        <% end %>
+                      </div>
+                      <% if activity["notes"] %>
+                        <p class="text-xs text-gray-400 mt-0.5 truncate"><%= activity["notes"] %></p>
+                      <% end %>
+                    </div>
+                    <button data-no-drag
+                            data-action="click->itinerary-map#showDetail"
+                            title="Detalji"
+                            class="shrink-0 mt-0.5 flex h-6 w-6 items-center justify-center rounded-full text-gray-300 hover:text-indigo-500 hover:bg-indigo-50 transition">
+                      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <% if activity["travel_method_to_next"] && activity["travel_method_to_next"] != "none" %>
+                    <div class="flex items-start gap-2 ml-4 pl-1 py-1.5">
+                      <div class="h-4 border-l-2 border-dashed border-gray-200 mt-0.5"></div>
+                      <div class="flex flex-col gap-0.5">
+                        <span class="text-[11px] text-gray-400">
+                          <%= travel_method_labels[activity["travel_method_to_next"]] || activity["travel_method_to_next"] %>
+                          <% if activity["travel_duration_to_next_minutes"] %>
+                            · <%= activity["travel_duration_to_next_minutes"] %>min
+                          <% end %>
+                        </span>
+                        <% td = activity["transit_details"] %>
+                        <% if td.is_a?(Hash) && (td["line"] || td["boarding_station"] || td["exit_station"]) %>
+                          <span class="text-[11px] text-indigo-500 font-medium">
+                            <% if td["line"] %><span class="bg-indigo-50 rounded px-1 py-0.5 mr-1"><%= td["line"] %></span><% end %>
+                            <% if td["boarding_station"] && td["exit_station"] %>
+                              <%= td["boarding_station"] %> → <%= td["exit_station"] %>
+                            <% elsif td["boarding_station"] %>
+                              <%= td["boarding_station"] %>
+                            <% elsif td["exit_station"] %>
+                              → <%= td["exit_station"] %>
+                            <% end %>
+                          </span>
+                        <% end %>
+                      </div>
+                    </div>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+
+        <div class="flex-1 min-w-0 rounded-2xl overflow-hidden border border-gray-200"
+             data-itinerary-map-target="mapContainer"
+             style="height: 520px;">
+        </div>
+
+      </div>
+
+    </div>
+  <% end %>
+</div>

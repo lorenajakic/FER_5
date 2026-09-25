@@ -1,0 +1,113 @@
+\documentclass[a4paper]{article}
+
+\usepackage[
+top=0.79in,
+bottom=0.79in,
+left=0.79in,
+right=0.79in,
+]{geometry}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{array}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{10pt}
+\newlength{\tablewidth}
+
+\setlist[itemize]{
+	topsep=0.2em,
+	itemsep=0em,
+	parsep=0em,
+	partopsep=0em
+}
+
+\newenvironment{period}[2]{%
+	\setlength{\tablewidth}{\linewidth}
+	\addtolength{\tablewidth}{-2\tabcolsep}
+	\begin{tabular}{@{}p{0.75\tablewidth}>{\raggedleft\arraybackslash}p{0.25\tablewidth}@{}}%
+		#1 & #2 \\
+	\end{tabular}%
+	\vspace{0.15em}
+	\begin{itemize}[leftmargin=1.2em]
+	}{%
+	\end{itemize}
+	\vspace{0.5em}
+}
+
+\newenvironment{skills}{%
+	\setlength{\tablewidth}{\linewidth}
+	\addtolength{\tablewidth}{-2\tabcolsep}
+	\begin{tabular}{@{}p{0.32\tablewidth}p{0.68\tablewidth}@{}}
+	}{%
+	\end{tabular}
+}
+
+\titleformat{\section}{\uppercase}{}{0pt}{}[{\vspace{0.5em}\titlerule}]
+\titleformat{\subsection}{\bfseries}{}{0pt}{}{}
+\titlespacing{\section}{0pt}{1em}{0.5em}
+\titlespacing{\subsection}{0pt}{0pt}{0.1em}
+
+\begin{document}
+	
+	\fontfamily{\sfdefault}
+	\selectfont
+	
+	\begin{minipage}{.5\textwidth}
+		\LARGE Jakic Petar\\
+		\normalsize 78 Av du Général Leclerc, 93500 Pantin
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\raggedleft
+		\href{mailto:ppierre698@gmail.com}{ppierre698@gmail.com} \\
+		06 22 68 37 69
+	\end{minipage}
+	
+	\vspace{1em}
+	
+	\section{EXPÉRIENCES PROFESSIONNELLES}
+	
+	\subsection{ESSILOR}
+	
+	\begin{period}{57 avenue de Condé, 94100 Saint-Maur-des-Fossés}{1999--2015}
+		\item Gestion des stocks et manutention.
+	\end{period}
+	
+		\vspace{1em}
+	
+	\subsection{VILLE DE PARIS, Cimetière parisien de Pantin}
+	
+	\begin{period}{Agent technique d’entretien des espaces verts}{2015--à nos jours}
+		\item Entretien général du cimetière
+		\item Travail avec des engins de chantier, débroussailleuse, souffleur, etc.
+	\end{period}
+	
+	\section{COMPÉTENCES}
+	
+	\begin{skills}
+		Compétences~professionnelles: &
+		Entretien des espaces verts, manutention, gestion des stocks, utilisation d'engins de chantier \\
+		Formations: &
+		Diverses formations informatiques, CACES 4, formation de secouriste et autres formations liées au travail dans les espaces verts \\
+	\end{skills}
+	
+	\section{INFORMATIONS COMPLÉMENTAIRES}
+	
+	\begin{skills}
+		Permis et certifications: &
+		Permis B, CACES 4 pour engins de chantier
+	\end{skills}
+	
+	\section{LANGUES}
+	
+	\begin{skills}
+		Français & Courant\\
+		Anglais & Débutant \\
+	\end{skills}
+	
+\end{document}

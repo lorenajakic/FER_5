@@ -1,0 +1,28 @@
+<div class="mx-auto max-w-3xl">
+  <div class="mb-6">
+    <%= link_to root_path, class: "inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700" do %>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+      <%= t('trips.back_to_trips') %>
+    <% end %>
+  </div>
+
+  <div class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-200">
+    <div class="relative overflow-hidden bg-gradient-to-br from-indigo-500 to-purple-600 px-8 py-10 text-white">
+      <div class="absolute -right-10 -top-10 h-44 w-44 rounded-full bg-white/10"></div>
+      <div class="absolute -bottom-14 -left-10 h-40 w-40 rounded-full bg-white/10"></div>
+      <div class="relative flex items-center gap-4">
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/20 backdrop-blur">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold"><%= t('trips.new_title') %></h1>
+          <p class="mt-1 text-sm text-indigo-100"><%= t('trips.form.subtitle') %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-8 sm:p-10">
+      <%= render partial: 'form', locals: { trip: @trip } %>
+    </div>
+  </div>
+</div>

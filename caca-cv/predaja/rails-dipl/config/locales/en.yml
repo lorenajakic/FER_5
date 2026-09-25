@@ -1,0 +1,357 @@
+en:
+  activerecord:
+    attributes:
+      trip:
+        start_date: "Start date"
+        end_date: "End date"
+      user:
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+    errors:
+      models:
+        trip:
+          attributes:
+            end_date:
+              after_start_date: "must be after start date"
+        ticket:
+          attributes:
+            file:
+              blank: "Please attach a PDF or image."
+              invalid_type: "must be a PDF or image (JPEG, PNG, WebP)."
+              too_large: "must be at most 20 MB."
+
+  date:
+    formats:
+      short: "%b %-d"
+      long: "%b %-d, %Y"
+      day_header: "%A, %B %-d"
+
+  app_name: "GoTogether"
+
+  devise:
+    confirmations:
+      new:
+        title: "Resend confirmation instructions"
+        subtitle: "Enter your email and we'll resend the confirmation link."
+        resend_instructions: "Resend confirmation instructions"
+        back_to_sign_in: "Back to sign in"
+      mailer:
+        greeting: "Welcome, %{email}!"
+        instructions: "You can confirm your account by clicking the link below:"
+        confirm_link: "Confirm my account"
+    passwords:
+      new:
+        title: "Forgot your password?"
+        subtitle: "Enter your email and we'll send you reset instructions."
+        send_instructions: "Send reset instructions"
+        back_to_sign_in: "Back to sign in"
+      edit:
+        title: "Set new password"
+        new_password: "New password"
+        characters_minimum: "%{count} characters minimum"
+        confirm_new_password: "Confirm new password"
+        change_password: "Change my password"
+        back_to_sign_in: "Back to sign in"
+      reset_email:
+        greeting: "Hello %{email}!"
+        requested: "Someone has requested a link to change your password. You can do this through the link below."
+        change_password: "Change my password"
+        ignore: "If you didn't request this, please ignore this email."
+        no_change: "Your password won't change until you access the link above and create a new one."
+    registrations:
+      new:
+        title: "Create your account"
+        characters_minimum: "%{count} characters minimum"
+        sign_up: "Sign up"
+        already_have_account: "Already have an account?"
+        sign_in: "Sign in"
+    sessions:
+      new:
+        sign_in_to: "Sign in"
+        sign_in: "Sign in"
+        forgot_password: "Forgot your password?"
+        resend_confirmation: "Didn't receive confirmation instructions?"
+        no_account: "Don't have an account?"
+        sign_up: "Sign up"
+
+  nav:
+    profile: "Profile"
+    sign_out: "Sign out"
+    invitations: "Trip invitations"
+
+  dashboard:
+    title: "My Trips"
+    new_trip: "New Trip"
+    no_trips: "No trips yet"
+    no_trips_hint: "Create your first trip to get started!"
+    create_first_trip: "Create Your First Trip"
+    days_count:
+      one: "%{count} day"
+      other: "%{count} days"
+
+  trips:
+    new_title: "New Trip"
+    edit_title: "Edit Trip"
+    back_to_trips: "My Trips"
+    back_to_trip: "Back to %{title}"
+    status_updated: "Trip status updated to: %{status}."
+    status_actions:
+      planning: "Start planning"
+      finalized: "Finish planning"
+      completed: "Mark as completed"
+    created: "Trip created successfully."
+    updated: "Trip updated successfully."
+    deleted: "Trip deleted successfully."
+    not_participant: "You are not a participant of this trip."
+    only_creator: "Only the trip creator can perform this action."
+    not_editable: "This trip can no longer be edited."
+    confirm_delete: "Are you sure you want to delete this trip?"
+    errors:
+      overlapping: "Dates overlap with your trip \"%{trip_title}\". Trips can share a boundary day but cannot overlap."
+    statuses:
+      draft: "Draft"
+      planning: "Planning"
+      finalized: "Planning complete"
+      completed: "Completed"
+    form:
+      subtitle: "Start planning your next adventure! Add the essentials now and fill in the rest later."
+      title: "Title"
+      title_placeholder: "e.g. Paris Adventure"
+      destination: "Destination"
+      destination_placeholder: "e.g. Paris, France"
+      start_date: "Start date"
+      end_date: "End date"
+      accommodation_section_title: "Accommodation (optional)"
+      accommodation_section_hint: "You can leave this empty now and fill it in later."
+      accommodation_address: "Accommodation address"
+      accommodation_address_placeholder: "e.g. 10 Rue de Rivoli, Paris"
+      accommodation_details: "Accommodation details"
+      accommodation_details_placeholder: "e.g. Check-in 15:00, check-out 11:00, booking ref: ABC123"
+      transport_section_title: "Arrival and departure (optional)"
+      transport_section_hint: "Add flight/bus/train details if you have them. You can fill this later."
+      arrival_card_title: "Arrival"
+      departure_card_title: "Departure"
+      transport_mode_label: "Transport"
+      time_label: "Time"
+      details_label: "Details"
+      arrival_transport_mode: "Arrival transport"
+      arrival_at: "Arrival time"
+      arrival_details: "Arrival details"
+      arrival_details_placeholder: "e.g. FR 876, CDG Terminal 2B"
+      departure_transport_mode: "Departure transport"
+      departure_at: "Departure time"
+      departure_details: "Departure details"
+      departure_details_placeholder: "e.g. Flixbus 102, Paris Bercy"
+      not_set: "Not set"
+      cover_image: "Cover image"
+      cover_image_hint: "JPG, PNG or WebP."
+      errors_title: "Please fix the following errors:"
+    show:
+      participants: "Participants"
+      creator: "creator"
+      edit: "Edit"
+      delete: "Delete"
+      accommodation_label: "Accommodation"
+      accommodation_not_set: "Not set yet"
+      arrival_label: "Arrival"
+      departure_label: "Departure"
+      not_set: "Not set"
+    transport_modes:
+      plane: "Plane"
+      bus: "Bus"
+      train: "Train"
+      car: "Car"
+      ferry: "Ferry"
+      other: "Other"
+    tabs:
+      places: "Places"
+      itinerary: "Schedule"
+      chat: "Agent"
+      tickets: "Documents"
+    placeholders:
+      places: "Search and add places to your trip. Coming soon."
+      itinerary: "Your day-by-day travel plan will appear here. Coming soon."
+      chat: "Trip chat will appear here. Coming soon."
+      tickets: "Upload and manage your travel documents. Coming soon."
+
+  invitations:
+    page_title: "Invitations"
+    invite_title: "Invite People"
+    email_placeholder: "Email address..."
+    invite_button: "Invite"
+    pending_badge: "Pending"
+    sent: "Invitation sent successfully."
+    accepted: "You have joined the trip!"
+    declined: "Invitation declined."
+    not_found: "Invitation not found."
+    invited_by: "Invited by %{name}"
+    time_ago: "%{time} ago"
+    accept_button: "Accept"
+    decline_button: "Decline"
+    no_invitations: "No pending invitations"
+    no_invitations_hint: "When someone invites you to a trip, it will appear here."
+    errors:
+      user_not_found: "No user found with this email address."
+      already_participant: "This user is already a participant."
+      already_invited: "An invitation has already been sent to this email."
+
+  profiles:
+    title: "Profile"
+    edit_title: "Edit Profile"
+    change_password: "Change password"
+    edit_profile: "Edit profile"
+    name: "Name"
+    avatar: "Avatar"
+    avatar_browse: "Choose file"
+    avatar_pick_cta: "No photo yet, choose an image to upload."
+    avatar_replace_cta: "Current photo is on the left, choose a new image to replace it."
+    avatar_invalid_type: "Please choose an image file (JPEG, PNG, WebP, …)."
+    avatar_too_large: "Image is too large (maximum 5 MB)."
+    save: "Save changes"
+    updated: "Profile updated successfully."
+
+  errors:
+    form:
+      not_saved: "Unable to save. Please fix the errors:"
+
+  pundit:
+    not_authorized: "You are not authorized to perform this action."
+
+  tickets:
+    created: "Ticket saved."
+    updated: "Ticket updated."
+    deleted: "Ticket removed."
+    add_ticket: "New"
+    add_first: "Add your first ticket"
+    tab_heading: "Documents & tickets"
+    tab_subheading:
+      zero: "No documents"
+      one: "%{count} document"
+      other: "%{count} documents"
+    new_title: "Add ticket"
+    edit_title: "Edit ticket"
+    edit_subtitle: "Update details for %{title}."
+    back_to_trip: "Back to trip"
+    back_to_tickets_tab: "Back to tickets"
+    empty_title: "No tickets yet"
+    empty_hint: "Add flights, hotel bookings, activity passes, or transport tickets."
+    uploaded_by: "Uploaded by"
+    open_pdf: "Open PDF"
+    open_image: "View image"
+    view_pdf: "View PDF"
+    view_image: "View image"
+    download_pdf: "Open / download PDF"
+    download_image: "Open / download image"
+    confirm_delete: "Remove this ticket?"
+    file_invalid_type: "Choose a PDF or image (JPEG, PNG, WebP)."
+    file_too_large: "File must be at most 20 MB."
+    file_required: "Please attach a file (PDF or image)."
+    filters:
+      all: "All"
+    categories:
+      accommodation: "Accommodation"
+      activity: "Activity"
+      transport: "Transport"
+      other: "Other"
+    form:
+      section_details: "Details"
+      title: "Title"
+      title_placeholder: "e.g. Zagreb → Paris, Hotel Le Marais…"
+      category: "Category"
+      date: "Date"
+      details: "Details / notes"
+      details_placeholder: "Booking reference, confirmation number, extra info…"
+      cost: "Cost (optional)"
+      cost_label: "Cost (optional)"
+      currency: "Currency"
+      file: "Attachment"
+      file_cta: "Click to choose a file"
+      file_replace_cta: "Click to replace file"
+      file_hint: "PDF or image, up to 20 MB"
+      file_current: "Current file"
+      file_keep_hint: "Leave empty to keep the current file."
+      submit: "Save ticket"
+      submit_update: "Save changes"
+
+  places:
+    search_placeholder: "Search for a place..."
+    add_manually: "Add place manually"
+    added_places:
+      zero: "No places added"
+      one: "%{count} place added"
+      other: "%{count} places added"
+    empty_title: "No places yet"
+    empty_hint: "Search for a place (pick a category first), or click the map on a landmark, and we'll try to read its name."
+    pin_dropped: "Pin dropped on map"
+    reverse_loading: "Looking up this location…"
+    reverse_not_found: "No name found, type it yourself"
+    map_pick_title: "Place on the map"
+    map_pick_subtitle: "Name and address come from OpenStreetMap. Edit if needed, choose category, then add."
+    map_hint: "Click on a landmark or building on the map to load its name, or use search above."
+    confirm_delete: "Remove this place?"
+    added_by: "Added by"
+    comment_placeholder: "Add a comment..."
+    add_comment: "Post"
+    categories:
+      restaurant: "Restaurant"
+      museum: "Museum"
+      park: "Park"
+      landmark: "Landmark"
+      shopping: "Shopping"
+      entertainment: "Entertainment"
+      other: "Other"
+    form:
+      name: "Name"
+      name_placeholder: "e.g. Eiffel Tower"
+      latitude: "Latitude"
+      longitude: "Longitude"
+      category: "Category"
+      duration: "Duration (min)"
+      submit: "Add place"
+
+  confirm_dialog:
+    title: "Are you sure?"
+    cancel: "Cancel"
+    confirm: "Yes, delete"
+
+  account_settings:
+    title: "Account Settings"
+    email: "Email"
+    current_password: "Current password"
+    current_password_hint: "We need your current password to confirm changes"
+    new_password: "New password"
+    password_confirmation: "Password confirmation"
+    save_changes: "Save changes"
+
+  itinerary:
+    saved: "Itinerary saved!"
+    panel:
+      day: "Day"
+      no_itinerary: "No itinerary yet"
+      no_itinerary_hint: "Plan your trip in the Chat tab, then click \"Save to itinerary\""
+      transport_to_next: "Transport to next"
+      travel_methods:
+        transit: "public transport"
+        walking: "walking"
+        driving: "driving"
+        cycling: "cycling"
+        taxi: "taxi"
+
+  agent:
+    errors:
+      unreachable: "Could not reach the planning agent. Please try again."
+      no_response: "Agent did not return a final response."
+      generic: "I can't generate a response right now. Please try again in a moment."
+    chat:
+      placeholder: "Ask the assistant to build your next day..."
+      submit_hint: "Enter sends. Shift+Enter adds a new line."
+      empty_title: "Ask the AI to plan your trip"
+      empty_hint: "Try: \"Plan my trip\" · \"Suggest a cafe near day 2\" · \"Move the museum to day 3\""
+      save_to_itinerary: "Save to itinerary"
+
+  common:
+    cancel: "Cancel"
+    edit: "Edit"
+    delete: "Delete"
+    save: "Save"

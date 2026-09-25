@@ -1,0 +1,134 @@
+<%= form_with(model: trip, class: "space-y-6") do |f| %>
+  <% input_classes = "block w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-800 shadow-sm placeholder:text-gray-400 outline-none focus:outline-none focus-visible:outline-none focus-visible:outline-0 focus:border-slate-300 focus:ring-2 focus:ring-slate-100" %>
+  <% date_input_classes = "block w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-800 shadow-sm [color-scheme:light] accent-slate-500 [caret-color:#64748b] [&::-webkit-date-and-time-value]:text-gray-700 [&::-webkit-datetime-edit]:text-gray-700 [&::-webkit-datetime-edit-day-field]:text-gray-700 [&::-webkit-datetime-edit-month-field]:text-gray-700 [&::-webkit-datetime-edit-year-field]:text-gray-700 [&::-webkit-datetime-edit-text]:text-gray-700 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-55 hover:[&::-webkit-calendar-picker-indicator]:opacity-75 outline-none focus:outline-none focus-visible:outline-none focus-visible:outline-0 focus:border-slate-300 focus:ring-2 focus:ring-slate-100" %>
+  <% if trip.errors.any? %>
+    <div class="rounded-md bg-red-50 p-4">
+      <div class="flex">
+        <svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd" /></svg>
+        <div class="ml-3">
+          <h3 class="text-sm font-medium text-red-800"><%= t('trips.form.errors_title') %></h3>
+          <ul class="mt-2 list-disc list-inside text-sm text-red-700">
+            <% trip.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :title, t('trips.form.title'), class: "block text-sm font-semibold text-gray-700 mb-2" %>
+    <%= f.text_field :title, class: input_classes, placeholder: t('trips.form.title_placeholder') %>
+  </div>
+
+  <div class="relative" data-controller="destination-autocomplete">
+    <%= f.label :destination, t('trips.form.destination'), class: "block text-sm font-semibold text-gray-700 mb-2" %>
+    <%= f.text_field :destination,
+        class: input_classes,
+        placeholder: t('trips.form.destination_placeholder'),
+        autocomplete: "off",
+        data: { destination_autocomplete_target: "input", action: "input->destination-autocomplete#search keydown->destination-autocomplete#keydown" } %>
+    <div data-destination-autocomplete-target="results" class="absolute z-10 mt-1 w-full rounded-lg bg-white shadow-lg ring-1 ring-gray-200 hidden overflow-hidden"></div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <div>
+      <%= f.label :start_date, t('trips.form.start_date'), class: "block text-sm font-semibold text-gray-700 mb-2" %>
+      <%= f.date_field :start_date, value: trip.start_date&.iso8601, min: Date.today.iso8601, class: date_input_classes %>
+    </div>
+
+    <div>
+      <%= f.label :end_date, t('trips.form.end_date'), class: "block text-sm font-semibold text-gray-700 mb-2" %>
+      <%= f.date_field :end_date, value: trip.end_date&.iso8601, min: Date.today.iso8601, class: date_input_classes %>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700"><%= t("trips.form.accommodation_section_title") %></h3>
+      <p class="mt-1 text-xs text-gray-500"><%= t("trips.form.accommodation_section_hint") %></p>
+    </div>
+
+    <div>
+      <%= f.label :accommodation_address, t("trips.form.accommodation_address"), class: "block text-sm font-semibold text-gray-700 mb-2" %>
+      <%= f.text_field :accommodation_address, class: input_classes, placeholder: t("trips.form.accommodation_address_placeholder") %>
+    </div>
+
+    <div>
+      <%= f.label :accommodation_details, t("trips.form.accommodation_details"), class: "block text-sm font-semibold text-gray-700 mb-2" %>
+      <%= f.text_area :accommodation_details, rows: 3, class: "#{input_classes} resize-none", placeholder: t("trips.form.accommodation_details_placeholder") %>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <div>
+      <h3 class="text-sm font-semibold text-gray-700"><%= t("trips.form.transport_section_title") %></h3>
+      <p class="mt-1 text-xs text-gray-500"><%= t("trips.form.transport_section_hint") %></p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="rounded-xl border border-gray-200 bg-gray-50 p-4 space-y-3">
+        <div class="flex items-center gap-2 pb-1 border-b border-gray-200">
+          <span class="flex items-center justify-center w-6 h-6 rounded-full bg-indigo-100">
+            <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+            </svg>
+          </span>
+          <span class="text-sm font-semibold text-gray-700"><%= t("trips.form.arrival_card_title") %></span>
+        </div>
+        <div>
+          <%= f.label :arrival_transport_mode, t("trips.form.transport_mode_label"), class: "block text-xs font-medium text-gray-500 mb-1" %>
+          <%= f.select :arrival_transport_mode, options_for_select(Trip::TRANSPORT_MODES.map { |m| [t("trips.transport_modes.#{m}"), m] }, trip.arrival_transport_mode), { include_blank: t("trips.form.not_set") }, class: input_classes %>
+        </div>
+        <div>
+          <%= f.label :arrival_at, t("trips.form.time_label"), class: "block text-xs font-medium text-gray-500 mb-1" %>
+          <%= f.datetime_local_field :arrival_at, value: trip.arrival_at&.strftime("%Y-%m-%dT%H:%M"), class: date_input_classes %>
+        </div>
+        <div>
+          <%= f.label :arrival_details, t("trips.form.details_label"), class: "block text-xs font-medium text-gray-500 mb-1" %>
+          <%= f.text_field :arrival_details, class: input_classes, placeholder: t("trips.form.arrival_details_placeholder") %>
+        </div>
+      </div>
+
+      <div class="rounded-xl border border-gray-200 bg-gray-50 p-4 space-y-3">
+        <div class="flex items-center gap-2 pb-1 border-b border-gray-200">
+          <span class="flex items-center justify-center w-6 h-6 rounded-full bg-indigo-100">
+            <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+            </svg>
+          </span>
+          <span class="text-sm font-semibold text-gray-700"><%= t("trips.form.departure_card_title") %></span>
+        </div>
+        <div>
+          <%= f.label :departure_transport_mode, t("trips.form.transport_mode_label"), class: "block text-xs font-medium text-gray-500 mb-1" %>
+          <%= f.select :departure_transport_mode, options_for_select(Trip::TRANSPORT_MODES.map { |m| [t("trips.transport_modes.#{m}"), m] }, trip.departure_transport_mode), { include_blank: t("trips.form.not_set") }, class: input_classes %>
+        </div>
+        <div>
+          <%= f.label :departure_at, t("trips.form.time_label"), class: "block text-xs font-medium text-gray-500 mb-1" %>
+          <%= f.datetime_local_field :departure_at, value: trip.departure_at&.strftime("%Y-%m-%dT%H:%M"), class: date_input_classes %>
+        </div>
+        <div>
+          <%= f.label :departure_details, t("trips.form.details_label"), class: "block text-xs font-medium text-gray-500 mb-1" %>
+          <%= f.text_field :departure_details, class: input_classes, placeholder: t("trips.form.departure_details_placeholder") %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <%= f.label :cover_image, t('trips.form.cover_image'), class: "block text-sm font-semibold text-gray-700 mb-2" %>
+    <% if trip.persisted? && trip.cover_image.attached? %>
+      <div class="mb-3 relative inline-block">
+        <%= image_tag trip.cover_image, class: "rounded-lg object-cover h-20 w-auto", alt: trip.title %>
+      </div>
+    <% end %>
+    <%= f.file_field :cover_image, accept: "image/*", class: "block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 file:cursor-pointer" %>
+    <p class="mt-1 text-xs text-gray-400"><%= t('trips.form.cover_image_hint') %></p>
+  </div>
+
+  <div class="flex items-center gap-4 pt-2">
+    <%= f.submit class: "inline-flex items-center rounded-lg bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition cursor-pointer" %>
+    <%= link_to t('common.cancel'), (trip.persisted? ? trip_path(trip) : root_path), class: "text-sm font-medium text-gray-600 hover:text-gray-900" %>
+  </div>
+<% end %>

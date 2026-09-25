@@ -1,0 +1,7 @@
+<% if @invite_result[:success] %>
+  <% @trip.reload %>
+  <%= turbo_stream.replace dom_id(@trip, :invite_section), partial: "trips/invitations/invite_section", locals: { trip: @trip } %>
+  <%= turbo_stream.append "toast_stack", partial: "shared/turbo_toast", locals: { message: t("invitations.sent"), variant: :notice } %>
+<% else %>
+  <%= turbo_stream.append "toast_stack", partial: "shared/turbo_toast", locals: { message: @invite_result[:error], variant: :alert } %>
+<% end %>

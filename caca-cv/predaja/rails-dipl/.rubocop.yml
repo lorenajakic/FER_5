@@ -1,0 +1,13 @@
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - Docs/**/*
+    - db/cache_schema.rb
+    - db/queue_schema.rb
+    - db/cable_schema.rb
+    - bin/**/*
+    - node_modules/**/*
+    - vendor/**/*

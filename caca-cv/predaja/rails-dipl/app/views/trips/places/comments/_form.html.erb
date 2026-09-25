@@ -1,0 +1,9 @@
+<%= tag.div id: dom_id(place, :new_comment), class: "mt-2" do %>
+  <%= form_with url: trip_place_comments_path(trip, place), method: :post, html: { id: dom_id(place, :comment_form), class: 'flex min-w-0 gap-2' } do |f| %>
+    <%= f.text_field :body, name: 'place_comment[body]', id: dom_id(place, :comment_body), placeholder: t('places.comment_placeholder'), required: true,
+        class: 'min-w-0 flex-1 rounded-lg border border-gray-200 px-3 py-1.5 text-xs focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50' %>
+    <button type="submit" class="shrink-0 rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-200 transition cursor-pointer">
+      <%= t('places.add_comment') %>
+    </button>
+  <% end %>
+<% end %>

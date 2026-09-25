@@ -1,0 +1,18 @@
+Demonstracije:
+- token zamijenjen sinonimom (u normaliziranom obliku)
+REDAK 7 : Na slici se može vidjeti da se riječ respond zamijenila riječju answer.
+REDAK 13: Na slici se može vidjeti da se riječ gigantic zamijenila riječju big.
+
+- token zamijenjen normaliziranim oblikom
+REDAK 21 : Na slici se može vidjeti da se riječ quickly zamijenila riječju quick.
+
+- prepoznata zaustavna riječ
+REDAK 1 : Zaustavna riječ He
+REDAK 3 : Zaustavna riječ did
+REDAK 5 : Zaustavna riječ not
+REDAK 9 : Zaustavna riječ to
+REDAK 11: Zaustavna riječ the
+REDAK 17: Zaustavna riječ about
+
+riječ nije prepoznata → vraćena u izvornom obliku (malim slovima)
+REDAK 19: xyz vraćeno u izvornom obliku

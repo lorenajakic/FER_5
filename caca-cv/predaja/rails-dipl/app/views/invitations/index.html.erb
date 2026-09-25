@@ -1,0 +1,49 @@
+<div class="max-w-2xl mx-auto">
+  <div class="mb-4">
+    <%= link_to root_path, class: "inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700" do %>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+      <%= t('trips.back_to_trips') %>
+    <% end %>
+  </div>
+
+  <h1 class="text-2xl font-bold text-gray-900 mb-6"><%= t("invitations.page_title") %></h1>
+
+  <% if @pending_invitations.any? %>
+    <div class="space-y-3">
+      <% @pending_invitations.each do |inv| %>
+        <div class="bg-white rounded-xl border border-gray-200 p-5 flex flex-col gap-4 sm:flex-row sm:items-stretch">
+          <div class="flex gap-4 min-w-0 flex-1">
+            <div class="shrink-0">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100">
+                <svg class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+            </div>
+
+            <div class="min-w-0 flex-1">
+              <p class="text-sm font-semibold text-gray-900"><%= inv.trip.title %></p>
+              <p class="text-sm text-gray-500">
+                <%= inv.trip.destination %> &middot; <%= l(inv.trip.start_date, format: :short) %> &ndash; <%= l(inv.trip.end_date, format: :long) %>
+              </p>
+              <p class="text-xs text-gray-400 mt-1">
+                <%= t("invitations.invited_by", name: inv.invited_by.name) %>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex w-full shrink-0 flex-col gap-2 sm:w-auto sm:flex-row sm:items-center sm:justify-end sm:gap-3">
+            <%= button_to accept_invitation_path(inv), method: :post, form: { class: "w-full sm:w-auto" }, class: "w-full inline-flex justify-center items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 transition" do %>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <%= t("invitations.accept_button") %>
+            <% end %>
+            <%= button_to decline_invitation_path(inv), method: :post, form: { class: "w-full sm:w-auto" }, class: "w-full inline-flex justify-center items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition" do %>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              <%= t("invitations.decline_button") %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="text-sm text-gray-500"><%= t("invitations.no_invitations") %></p>
+  <% end %>
+</div>

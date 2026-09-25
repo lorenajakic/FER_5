@@ -1,0 +1,2 @@
+ALTER TEXT SEARCH CONFIGURATION lj53867
+	ALTER MAPPING FOR word, asciiword WITH lj53867Syn, english_stem;

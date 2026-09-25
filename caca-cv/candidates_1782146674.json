@@ -1,0 +1,506 @@
+.0.0.1:61917 - "POST /chat HTTP/1.1" 200 OK
+[trip_planner] route_intent     language → en
+[trip_planner] route_intent → plan_itinerary
+[trip_planner] plan_node        accommodation geocoded (48.2074, 16.3717, conf=0.90)
+[trip_planner] plan_node        → routing to execute_plan_node
+[trip_planner] CONTEXT SIZE     2754 chars (limit 16000, ok)
+[trip_planner] execute_plan     → LLM (anthropic:claude-opus-4-8) × 2 candidate(s) (parallel) ...
+[trip_planner] execute_plan     c1 LLM returned in 15576ms
+[trip_planner] execute_plan     c2 LLM returned in 17400ms
+[trip_planner] execute_plan     all LLM calls done in 17402ms wall-clock
+[trip_planner] execute_plan     c1 ok - 1 days, confidence 0.74
+[trip_planner] execute_plan     c2 ok - 1 days, confidence 0.78
+[trip_planner] execute_plan     done (17408ms) - 2 candidate(s)
+[trip_planner] validate         c1  PASS  (0 warnings)
+[trip_planner] validate         c2  PASS  (0 warnings)
+[trip_planner] score            c1 selected  final=0.786  (travel 0.5, pref 1.0, balance 1.0, schedule 0.55, fairness 1.0, budget None)
+[trip_planner] score            c2           final=0.749  (travel 0.3667, pref 1.0, balance 1.0, schedule 0.55, fairness 1.0, budget None)
+[trip_planner] compose          PASS - c1, 0 soft warnings
+[trip_planner] compose          DEBUG dump → debug_dumps/candidates_1782146674.json
+[trip_planner] --- timings ---
+[trip_planner]   route_intent                       1712 ms  █
+[trip_planner]   plan_node                          1120 ms  █
+[trip_planner]   execute_plan_node                 17408 ms  █████████████████
+[trip_planner]   validate_candidates                   0 ms  
+[trip_planner]   score_candidates                      0 ms  
+[trip_planner]   compose_response                      3 ms  
+[trip_planner]   TOTAL                             20244 ms
+
+Bec u jednom danu
+
+{
+  "timestamp": 1782146674,
+  "selected_candidate_id": "c1",
+  "candidates": [
+    {
+      "id": "c1",
+      "generation_rationale": "One packed day sweeping from central cathedral through Hofburg and Naschmarkt, then Schönbrunn, ending at Belvedere near the station.",
+      "assumptions": [
+        "Single day trip; meals at Naschmarkt (lunch) and near Belvedere (dinner)."
+      ],
+      "preliminary_confidence": 0.74,
+      "validation": {
+        "candidate_id": "c1",
+        "hard_pass": true,
+        "violations": [],
+        "warnings": []
+      },
+      "plan": {
+        "plan": {
+          "days": [
+            {
+              "day_number": 1,
+              "date": "2026-12-05",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "St. Stephen's Cathedral",
+                  "start_time": "09:30",
+                  "duration_minutes": 60,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 600,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 15,
+                  "transit_details": null,
+                  "notes": "Steps from accommodation in the center.",
+                  "latitude": 48.2085,
+                  "longitude": 16.3731
+                },
+                {
+                  "position": 2,
+                  "place_name": "Hofburg",
+                  "start_time": "10:45",
+                  "duration_minutes": 90,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 1500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": null,
+                  "notes": "Imperial palace complex.",
+                  "latitude": 48.2065,
+                  "longitude": 16.3645
+                },
+                {
+                  "position": 3,
+                  "place_name": "Naschmarkt",
+                  "start_time": "12:35",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 25,
+                  "transit_details": {
+                    "line": "U4",
+                    "boarding_station": "Kettenbrückengasse",
+                    "exit_station": "Schönbrunn",
+                    "direction": "direction Hütteldorf"
+                  },
+                  "notes": "Lunch at the market. Alternatives: Naschmarkt Deli, Neni am Naschmarkt.",
+                  "latitude": 48.1985,
+                  "longitude": 16.3631
+                },
+                {
+                  "position": 4,
+                  "place_name": "Schönbrunn Palace",
+                  "start_time": "14:25",
+                  "duration_minutes": 120,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 2700,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 35,
+                  "transit_details": {
+                    "line": "U4",
+                    "boarding_station": "Schönbrunn",
+                    "exit_station": "Stadtpark",
+                    "direction": "direction Heiligenstadt"
+                  },
+                  "notes": "Book timed ticket ahead.",
+                  "latitude": 48.1855,
+                  "longitude": 16.3122
+                },
+                {
+                  "position": 5,
+                  "place_name": "Belvedere",
+                  "start_time": "17:20",
+                  "duration_minutes": 75,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 1700,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 10,
+                  "transit_details": null,
+                  "notes": "See Klimt's The Kiss; late entry, check closing.",
+                  "latitude": 48.1915,
+                  "longitude": 16.3809
+                },
+                {
+                  "position": 6,
+                  "place_name": "Salm Bräu",
+                  "start_time": "18:45",
+                  "duration_minutes": 75,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 3500,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": 0,
+                  "transit_details": null,
+                  "notes": "Dinner near Belvedere. Alternatives: Gasthaus Wild, Plachutta Wollzeile.",
+                  "latitude": 48.1909,
+                  "longitude": 16.3835
+                }
+              ]
+            }
+          ]
+        },
+        "accommodation_suggestions": [],
+        "transport_suggestions": [
+          {
+            "title": "Vienna day ticket",
+            "details": "Buy a 24-hour Wiener Linien ticket (~€8) for unlimited U-Bahn/tram use.",
+            "estimated_cost_cents": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "c2",
+      "generation_rationale": "One geographic sweep from central St. Stephen's outward through Hofburg, Naschmarkt, Belvedere to far Schönbrunn, fitting all musts within arrival/departure cutoffs.",
+      "assumptions": [
+        "Tight one-day plan; brief stops at each landmark",
+        "Schönbrunn placed last as it's farthest and near departure window"
+      ],
+      "preliminary_confidence": 0.78,
+      "validation": {
+        "candidate_id": "c2",
+        "hard_pass": true,
+        "violations": [],
+        "warnings": []
+      },
+      "plan": {
+        "plan": {
+          "days": [
+            {
+              "day_number": 1,
+              "date": "2026-12-05",
+              "activities": [
+                {
+                  "position": 1,
+                  "place_name": "St. Stephen's Cathedral",
+                  "start_time": "09:30",
+                  "duration_minutes": 60,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 600,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 15,
+                  "transit_details": null,
+                  "notes": "Steps from accommodation in the center.",
+                  "latitude": 48.2085,
+                  "longitude": 16.3731
+                },
+                {
+                  "position": 2,
+                  "place_name": "Hofburg",
+                  "start_time": "10:45",
+                  "duration_minutes": 90,
+                  "time_block": "morning",
+                  "cost_estimate_cents": 1600,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "walk",
+                  "travel_duration_to_next_minutes": 20,
+                  "transit_details": null,
+                  "notes": "Imperial palace complex.",
+                  "latitude": 48.2065,
+                  "longitude": 16.3645
+                },
+                {
+                  "position": 3,
+                  "place_name": "Naschmarkt",
+                  "start_time": "12:35",
+                  "duration_minutes": 75,
+                  "time_block": "lunch",
+                  "cost_estimate_cents": 2200,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 25,
+                  "transit_details": {
+                    "line": "U-Bahn U4",
+                    "boarding_station": "Kettenbrückengasse",
+                    "exit_station": "Karlsplatz",
+                    "direction": "direction Heiligenstadt"
+                  },
+                  "notes": "Lunch at the market stalls.",
+                  "latitude": 48.1985,
+                  "longitude": 16.3631
+                },
+                {
+                  "position": 4,
+                  "place_name": "Belvedere",
+                  "start_time": "13:55",
+                  "duration_minutes": 105,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 1700,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 35,
+                  "transit_details": {
+                    "line": "Tram D",
+                    "boarding_station": "Schloss Belvedere",
+                    "exit_station": "Schönbrunn",
+                    "direction": "direction Hauptbahnhof then U4 to Schönbrunn"
+                  },
+                  "notes": "Klimt's The Kiss is here.",
+                  "latitude": 48.1915,
+                  "longitude": 16.3809
+                },
+                {
+                  "position": 5,
+                  "place_name": "Schönbrunn Palace",
+                  "start_time": "16:15",
+                  "duration_minutes": 120,
+                  "time_block": "afternoon",
+                  "cost_estimate_cents": 2600,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "transit",
+                  "travel_duration_to_next_minutes": 30,
+                  "transit_details": {
+                    "line": "U-Bahn U4",
+                    "boarding_station": "Schönbrunn",
+                    "exit_station": "Karlsplatz",
+                    "direction": "direction Heiligenstadt"
+                  },
+                  "notes": "Far from center; visit last before dinner.",
+                  "latitude": 48.1855,
+                  "longitude": 16.3122
+                },
+                {
+                  "position": 6,
+                  "place_name": "Plachutta Wollzeile",
+                  "start_time": "18:45",
+                  "duration_minutes": 75,
+                  "time_block": "dinner",
+                  "cost_estimate_cents": 4000,
+                  "cost_currency": "EUR",
+                  "travel_method_to_next": "none",
+                  "travel_duration_to_next_minutes": 0,
+                  "transit_details": null,
+                  "notes": "Alternatives: Figlmüller, Gasthaus Pöschl. Ends well before 20:30 departure.",
+                  "latitude": 48.2089,
+                  "longitude": 16.3776
+                }
+              ]
+            }
+          ]
+        },
+        "accommodation_suggestions": [],
+        "transport_suggestions": [
+          {
+            "title": "Vienna day pass",
+            "details": "Buy a 24-hour Wiener Linien ticket (~8 EUR) to cover U-Bahn and trams across the day.",
+            "estimated_cost_cents": 800
+          }
+        ]
+      }
+    }
+  ],
+  "score_report": {
+    "candidates": [
+      {
+        "candidate_id": "c1",
+        "travel_efficiency_score": 0.5,
+        "preference_fit_score": 1.0,
+        "day_balance_score": 1.0,
+        "schedule_quality_score": 0.55,
+        "participant_fairness_score": 1.0,
+        "budget_fit_score": null,
+        "final_score": 0.7861
+      },
+      {
+        "candidate_id": "c2",
+        "travel_efficiency_score": 0.3667,
+        "preference_fit_score": 1.0,
+        "day_balance_score": 1.0,
+        "schedule_quality_score": 0.55,
+        "participant_fairness_score": 1.0,
+        "budget_fit_score": null,
+        "final_score": 0.7491
+      }
+    ],
+    "selected_candidate_id": "c1",
+    "weights": {
+      "travel_efficiency": 0.2778,
+      "preference_fit": 0.2778,
+      "day_balance": 0.1667,
+      "schedule_quality": 0.1667,
+      "participant_fairness": 0.1111
+    }
+  },
+  "final_structured": {
+    "plan": {
+      "days": [
+        {
+          "day_number": 1,
+          "date": "2026-12-05",
+          "activities": [
+            {
+              "position": 1,
+              "place_name": "St. Stephen's Cathedral",
+              "start_time": "09:30",
+              "duration_minutes": 60,
+              "time_block": "morning",
+              "cost_estimate_cents": 600,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 15,
+              "transit_details": null,
+              "notes": "Steps from accommodation in the center.",
+              "latitude": 48.2085,
+              "longitude": 16.3731
+            },
+            {
+              "position": 2,
+              "place_name": "Hofburg",
+              "start_time": "10:45",
+              "duration_minutes": 90,
+              "time_block": "morning",
+              "cost_estimate_cents": 1500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 20,
+              "transit_details": null,
+              "notes": "Imperial palace complex.",
+              "latitude": 48.2065,
+              "longitude": 16.3645
+            },
+            {
+              "position": 3,
+              "place_name": "Naschmarkt",
+              "start_time": "12:35",
+              "duration_minutes": 75,
+              "time_block": "lunch",
+              "cost_estimate_cents": 2000,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 25,
+              "transit_details": {
+                "line": "U4",
+                "boarding_station": "Kettenbrückengasse",
+                "exit_station": "Schönbrunn",
+                "direction": "direction Hütteldorf"
+              },
+              "notes": "Lunch at the market. Alternatives: Naschmarkt Deli, Neni am Naschmarkt.",
+              "latitude": 48.1985,
+              "longitude": 16.3631
+            },
+            {
+              "position": 4,
+              "place_name": "Schönbrunn Palace",
+              "start_time": "14:25",
+              "duration_minutes": 120,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 2700,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "transit",
+              "travel_duration_to_next_minutes": 35,
+              "transit_details": {
+                "line": "U4",
+                "boarding_station": "Schönbrunn",
+                "exit_station": "Stadtpark",
+                "direction": "direction Heiligenstadt"
+              },
+              "notes": "Book timed ticket ahead.",
+              "latitude": 48.1855,
+              "longitude": 16.3122
+            },
+            {
+              "position": 5,
+              "place_name": "Belvedere",
+              "start_time": "17:20",
+              "duration_minutes": 75,
+              "time_block": "afternoon",
+              "cost_estimate_cents": 1700,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "walk",
+              "travel_duration_to_next_minutes": 10,
+              "transit_details": null,
+              "notes": "See Klimt's The Kiss; late entry, check closing.",
+              "latitude": 48.1915,
+              "longitude": 16.3809
+            },
+            {
+              "position": 6,
+              "place_name": "Salm Bräu",
+              "start_time": "18:45",
+              "duration_minutes": 75,
+              "time_block": "dinner",
+              "cost_estimate_cents": 3500,
+              "cost_currency": "EUR",
+              "travel_method_to_next": "none",
+              "travel_duration_to_next_minutes": 0,
+              "transit_details": null,
+              "notes": "Dinner near Belvedere. Alternatives: Gasthaus Wild, Plachutta Wollzeile.",
+              "latitude": 48.1909,
+              "longitude": 16.3835
+            }
+          ]
+        }
+      ]
+    },
+    "accommodation_suggestions": [],
+    "transport_suggestions": [
+      {
+        "title": "Vienna day ticket",
+        "details": "Buy a 24-hour Wiener Linien ticket (~€8) for unlimited U-Bahn/tram use.",
+        "estimated_cost_cents": null
+      }
+    ],
+    "constraint_report": {
+      "hard_pass": true,
+      "selected_candidate_id": "c1",
+      "violations": [],
+      "warnings": []
+    },
+    "score_report": {
+      "candidates": [
+        {
+          "candidate_id": "c1",
+          "travel_efficiency_score": 0.5,
+          "preference_fit_score": 1.0,
+          "day_balance_score": 1.0,
+          "schedule_quality_score": 0.55,
+          "participant_fairness_score": 1.0,
+          "budget_fit_score": null,
+          "final_score": 0.7861
+        },
+        {
+          "candidate_id": "c2",
+          "travel_efficiency_score": 0.3667,
+          "preference_fit_score": 1.0,
+          "day_balance_score": 1.0,
+          "schedule_quality_score": 0.55,
+          "participant_fairness_score": 1.0,
+          "budget_fit_score": null,
+          "final_score": 0.7491
+        }
+      ],
+      "selected_candidate_id": "c1",
+      "weights": {
+        "travel_efficiency": 0.2778,
+        "preference_fit": 0.2778,
+        "day_balance": 0.1667,
+        "schedule_quality": 0.1667,
+        "participant_fairness": 0.1111
+      }
+    },
+    "message": "One packed day sweeping from central cathedral through Hofburg and Naschmarkt, then Schönbrunn, ending at Belvedere near the station. Here's your day-by-day breakdown:\n\n**Where you're based:** Kärntner Straße, Wien, Austria - each full day starts and ends here.\n\n**Day 1 – Saturday, Dec 5**\nSt. Stephen's Cathedral · Hofburg · Naschmarkt · Schönbrunn Palace · Belvedere (+1 more)\n\n---\n**Getting around:**\n- **Vienna day ticket** - Buy a 24-hour Wiener Linien ticket (~€8) for unlimited U-Bahn/tram use.\n",
+    "accommodation_location": {
+      "address": "Kärntner Straße, Wien, Austria",
+      "latitude": 48.2073525,
+      "longitude": 16.3716922
+    }
+  }
+}

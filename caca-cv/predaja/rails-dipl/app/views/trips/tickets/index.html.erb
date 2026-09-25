@@ -1,0 +1,3 @@
+<%= render layout: "trips/tab_layout", locals: { trip: @trip } do %>
+  <%= render "trips/tickets/list", trip: @trip, tickets: @tickets, tickets_category_filter: @tickets_category_filter %>
+<% end %>

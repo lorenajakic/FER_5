@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+
+  shrs00:
+    image: mongo:4.4
+    networks:
+      - shardnet
+    command: mongod --shardsvr --replSet rs0
+    volumes:
+      - shrs00_data:/data/db
+
+  shrs01:
+    image: mongo:4.4
+    networks:
+      - shardnet
+    command: mongod --shardsvr --replSet rs0
+    volumes:
+      - shrs01_data:/data/db
+
+  shrs10:
+    image: mongo:4.4
+    networks:
+      - shardnet
+    command: mongod --shardsvr --replSet rs1
+    volumes:
+      - shrs10_data:/data/db
+
+  shrs11:
+    image: mongo:4.4
+    networks:
+      - shardnet
+    command: mongod --shardsvr --replSet rs1
+    volumes:
+      - shrs11_data:/data/db
+
+volumes:
+  shrs00_data:
+  shrs01_data:
+  shrs10_data:
+  shrs11_data:
+
+networks:
+  shardnet:
+    driver: "bridge"
+    name: "shardnet"

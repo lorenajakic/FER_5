@@ -1,0 +1,7 @@
+<% if place.errors.any? %>
+  <div id="place_form_errors" class="rounded-lg bg-red-50 p-3">
+    <p class="text-sm font-medium text-red-800"><%= place.errors.full_messages.join(', ') %></p>
+  </div>
+<% else %>
+  <div id="place_form_errors"></div>
+<% end %>
